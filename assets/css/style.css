@@ -5,6 +5,36 @@
 }
 
 body {
+    background-color: #ffffff;
+}
+
+.navbar {
+    background-color: #0e0e0e;
+}
+
+.dropdown-menu {
+    background-color: #0e0e0e;
+}
+
+.dropdown-item {
+    color: #ffffff;
+    transition: .2s;
+}
+
+.dropdown-item:hover {
+    transition: .2s;
+    color: #595959 !important;
+    background-color: #0e0e0e;
+}
+
+.dropdown-item:active {
+    color: #595959;
+    text-decoration: none;
+    background-color: #0e0e0e;
+}
+
+.dropdown-item:focus, .dropdown-item:hover {
+    color: #595959;
     background-color: #0e0e0e;
 }
 
@@ -21,7 +51,7 @@ body {
 }
 
 .nav-item a {
-    color: #0e0e0e !important;
+    color: #ffffff !important;
     font-weight: 500;
 }
 
@@ -87,8 +117,9 @@ body {
 
 .card-date {
     padding: 10px 0px 10px 0px;
-    color: #ffffff;
+    color: #000000;
     font-size: 12px;
+    font-weight: 500
 }
 
 .notice-title {
@@ -97,9 +128,10 @@ body {
 }
 
 .notice-content {
-    color: #ffffff;
+    color: #000000;
     padding: 10px 0px 10px 0px;
     font-size: 14px;
+    font-weight: 500;
 }
 
 .section__title h3 {
