@@ -8,6 +8,48 @@ body {
     background-color: #ffffff;
 }
 
+footer {
+    background-color: #0e0e0e;
+}
+
+footer .bx {
+    font-size: 32px;
+    color: #ffffff;
+}
+
+footer h3 {
+    color: #ffc800;
+    font-weight: 600;
+    margin-top: 20px;
+    text-transform: uppercase;
+}
+
+footer p {
+    color: #ffffff;
+    margin-top: 20px;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0px;
+    margin-top: 25px;
+}
+
+footer ul li {
+    margin-bottom: 10px;
+}
+
+footer ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+    transition: .2s;
+    text-transform: uppercase;
+}
+footer ul li a:hover {
+    color: #393939;
+}
+
 .navbar {
     background-color: #ffc800;
 }
@@ -53,6 +95,11 @@ body {
     margin-right: 20px;
 }
 
+.nav-link:focus-visible {
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0);
+}
+
 .top_nav_bar {
     background-color: #ffffff;
     padding-top: 10px;
@@ -69,11 +116,20 @@ body {
 }
 
 .search-btn {
-    border: 2px solid #ffc800;
+    border: 2px solid #0e0e0e;
+    background-color: #ffffff;
+}
+
+.search-btn i {
+    color: #0e0e0e;
 }
 
 .search-btn:hover {
-    background-color: #ffc800;
+    background-color: #ffffff;
+}
+
+.form-control {
+    border: 2px solid #0e0e0e;
 }
 
 .form-control:focus {
@@ -84,8 +140,8 @@ body {
     box-shadow: 0 0 0 0.1rem #ffc800;
 }
 
-.first__view__sec {
-    padding: 90px 0px 30px 0px;
+.first__view__sec { 
+    padding: 90px 0px 60px 0px;
 }
 
 .carousel {
@@ -121,11 +177,18 @@ body {
 
 .notices__sec {
     padding: 30px 0px 30px 0px;
+    background-color: #0e0e0e;
 }
 
 .notice__card img {
     width: 100%;
     border-radius: 4px;
+    transition: .2s;
+}
+
+.notice__card  img:hover {
+    transition: .4s;
+    transform: scale(1.04);
 }
 
 .notice__card {
@@ -134,7 +197,7 @@ body {
 
 .card-date {
     padding: 10px 0px 10px 0px;
-    color: #000000;
+    color: #ffffff;
     font-size: 12px;
     font-weight: 500;
     text-decoration: none;
@@ -142,7 +205,7 @@ body {
 
 .notice-title {
     transition: .2s;
-    color: #000000;
+    color: #ffc800;
     font-weight: 600;
     font-size: 20px;
     text-decoration: none;
@@ -150,15 +213,19 @@ body {
 
 .notice-title:hover {
     transition: .2s;
-    color: #ffc800;
+    color: #ffffff;
 }
 
 .notice-content {
-    color: #000000;
+    color: #ffffff;
     padding: 10px 0px 10px 0px;
     font-size: 14px;
     font-weight: 500;
     text-decoration: none;
+}
+
+.section__title {
+    margin-bottom: 30px;
 }
 
 .section__title h3 {
@@ -222,6 +289,7 @@ body {
 
 .notice__link {
     text-decoration: none;
+    transition: .2s;
 }
 
 .badge {
@@ -235,3 +303,4 @@ body {
 .text-bg-warning {
     background-color: #ffc800 !important;
 }
+
