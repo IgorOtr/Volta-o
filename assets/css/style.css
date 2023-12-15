@@ -92,7 +92,7 @@ footer ul li a:hover {
 }
 
 .nav-item {
-    margin-right: 20px;
+    margin-right: 30px;
 }
 
 .nav-link:focus-visible {
@@ -153,7 +153,12 @@ footer ul li a:hover {
 
 .carousel-item img {
     border-radius: 4px;
-    filter: brightness(0.5);
+    filter: brightness(0.35);
+}
+
+.carousel-caption h5 {
+    font-weight: 600;
+    color: #ffc800;
 }
 
 .card {
@@ -176,9 +181,10 @@ footer ul li a:hover {
 }
 
 .notices__sec {
-    padding: 30px 0px 30px 0px;
+    /* padding: 30px 0px 30px 0px; */
     background-color: #0e0e0e;
 }
+
 
 .notice__card img {
     width: 100%;
@@ -196,7 +202,7 @@ footer ul li a:hover {
 }
 
 .card-date {
-    padding: 10px 0px 10px 0px;
+    /* padding: 10px 0px 10px 0px; */
     color: #ffffff;
     font-size: 12px;
     font-weight: 500;
@@ -218,6 +224,55 @@ footer ul li a:hover {
 
 .notice-content {
     color: #ffffff;
+    padding: 10px 0px 10px 0px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.notices__sec__2 {
+    padding: 30px 0px 30px 0px;
+    background-color: #ffffff;
+}
+
+.notices__sec__2 .notice__card img {
+    width: 100%;
+    border-radius: 4px;
+    transition: .2s;
+}
+
+.notices__sec__2 .notice__card  img:hover {
+    transition: .4s;
+    transform: scale(1.04);
+}
+
+.notices__sec__2 .notice__card {
+    text-decoration: none;
+}
+
+.notices__sec__2 .card-date {
+    padding: 10px 0px 10px 0px;
+    color: #000000;
+    font-size: 12px;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.notices__sec__2 .notice-title {
+    transition: .2s;
+    color: #000000;
+    font-weight: 600;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.notices__sec__2 .notice-title:hover {
+    transition: .2s;
+    color: #0000006b;
+}
+
+.notices__sec__2 .notice-content {
+    color: #000000;
     padding: 10px 0px 10px 0px;
     font-size: 14px;
     font-weight: 500;
@@ -302,5 +357,17 @@ footer ul li a:hover {
 
 .text-bg-warning {
     background-color: #ffc800 !important;
+}
+
+.details__card img {
+    width: 100%;
+}
+
+.details__card .card-date {
+    font-size: 12px;
+}
+
+.details__card .notice-content {
+    font-size: 18px;
 }
 
