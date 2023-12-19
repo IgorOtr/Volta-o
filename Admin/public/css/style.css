@@ -26,6 +26,11 @@ body {
     background-color: #ffc800;
 }
 
+.alert-warning {
+    background-color: #ffc800;
+    color: #0e0e0e;
+}
+
 .form-outline .form-control:focus~.form-label {
     color: #ffc800;
 }
@@ -96,5 +101,21 @@ body {
 }
 
 .page__wellcome__list li {
+    color: #ffffff;
+}
+
+.accordion-button h5 {
+    margin: 0px;
+}
+
+.form-label {
+    color: #ffc800;
+}
+
+.note-editable {
+    background-color: #ffffff;
+}
+
+.fa-bars {
     color: #ffffff;
 }

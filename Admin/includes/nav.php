@@ -12,16 +12,23 @@
             <!-- Collapsible wrapper -->
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <!-- Navbar brand -->
-                <a class="navbar-brand mt-2 mt-lg-0 logo" href="#">
+                <a class="navbar-brand mt-2 mt-lg-0 logo" href="index.php">
                     <span>Gerencie </span>&nbsp;Voltaço
                 </a>
                 <!-- Left links -->
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Notícias</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Notícias
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="noticias.php">Todas as Notícias</a></li>
+                            <li><a class="dropdown-item" href="add-notice.php">Adicionar Nova</a></li>
+                        </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Banner</a>
+                        <a class="nav-link" href="banner.php">Banner</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -29,8 +36,10 @@
                             Jogos
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Próximos Jogos&nbsp;<i class='bx bx-right-arrow-alt'></i></a></li>
-                            <li><a class="dropdown-item" href="#"><i class='bx bx-left-arrow-alt'></i>&nbsp;Jogos Anteriores</a></li>
+                            <li><a class="dropdown-item" href="#">Próximos Jogos&nbsp;<i
+                                        class='bx bx-right-arrow-alt'></i></a></li>
+                            <li><a class="dropdown-item" href="#"><i class='bx bx-left-arrow-alt'></i>&nbsp;Jogos
+                                    Anteriores</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -43,11 +52,13 @@
                 <div class="dropstart">
                     <button class="btn btn-warning dropdown-toggle" type="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
-                        <i class='bx bx-user-circle' ></i>
+                        <i class='bx bx-user-circle'></i>
                     </button>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="logout.php"><i class='bx bx-log-out'></i>&nbsp;Sair</a></li>
-                        <li><a class="dropdown-item" href="#"><i class='bx bx-cog'> </i>&nbsp;Configurações&nbsp;&nbsp;<span class="badge text-bg-danger">Em Breve</span></a></li>
+                        <li><a class="dropdown-item" href="#"><i class='bx bx-cog'>
+                                </i>&nbsp;Configurações&nbsp;&nbsp;<span class="badge text-bg-danger">Em
+                                    Breve</span></a></li>
                     </ul>
                 </div>
             </div>
