@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Rubik:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    font-family: Montserrat, Poppins, sans-serif;
+}
+
+body {
+    background-color: #0e0e0e;
+}
+
+.login__sec {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.login__sec h1 {
+    color: #ffc800;
+}
+
+.login__sec p {
+    color: #fff;
+}
+
+.btn-warning {
+    background-color: #ffc800;
+}
+
+.form-outline .form-control:focus~.form-label {
+    color: #ffc800;
+}
+
+.form-outline .form-control:focus {
+    border-bottom: 1px solid #ffc800;
+}
+
+.form-outline .form-control {
+    border-bottom: 1px solid #fff;
+    border-radius: 0px;
+}
+
+.main_section {
+    height: 100vh;
+
+}
+
+.logo {
+    font-weight: 800;
+    color: #ffc800;
+}
+
+.logo span {
+    color: #fff;
+}
+
+.nav-link {
+    color: #fff;
+}
+
+.nav-link:hover {
+    color: #7f7f7f;
+}
+
+.navbar-brand:hover {
+    color: #ffc800;
+}
+
+.bx-user-circle {
+    font-size: 24px;
+    color: #0e0e0e;
+}
+
+.bx-log-out {
+    font-size: 14px;
+}
+
+.bx-cog {
+    font-size: 14px;
+}
+
+.dropstart .dropdown-toggle::before {
+    display: none;
+}
+
+.nav-link:focus {
+    color: #7f7f7f;
+}
+
+.page__title {
+    color: #ffc800;
+    font-weight: 800;
+}
+
+.page__wellcome {
+    color: #ffffff;
+}
+
+.page__wellcome__list li {
+    color: #ffffff;
+}
