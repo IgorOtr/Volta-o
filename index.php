@@ -1,9 +1,15 @@
 <?php
+    require 'Admin/src/classes/Notice.php';
+
+    $class = new Notice();
+    $notices = $class->getNoticesToFront();
+    $details = $class->getDestaques();
+
     include 'includes/head.php';
 ?>
 
 <body>
-<?php include 'includes/nav.php'?>
+    <?php include 'includes/nav.php'?>
 
     <section class="first__view__sec pt-5 pb-5">
         <div class="container">
@@ -11,45 +17,21 @@
                 <div class="col-md-8">
                     <div id="carouselExampleCaptions" class="carousel slide">
                         <span class="badge text-bg-warning">Destaque</span>
-                        <div class="carousel-indicators">
-                            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0"
-                                class="active" aria-current="true" aria-label="Slide 1"></button>
-                            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
-                                aria-label="Slide 2"></button>
-                            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
-                                aria-label="Slide 3"></button>
-                            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
-                                aria-label="Slide 4"></button>
-                        </div>
                         <div class="carousel-inner">
+
+                            <?php foreach ($details as $key => $detail) {?>
+
                             <div class="carousel-item active">
-                                <img src="assets/img/banner1.png" class="d-block w-100" alt="..." />
+                                <img src="Admin/public/img/notices/<?php echo $detail['notice_image']?>"
+                                    class="d-block w-100" alt="..." />
                                 <div class="carousel-caption d-none d-md-block">
-                                    <h5>MV retorna ao Volta Redonda após empréstimo ao Ypiranga-RS</h5>
-                                    <p>Após período de empréstimo...</p>
+                                    <h5><?php echo $detail['notice_title']?></h5>
+                                    <p><?php echo substr(strip_tags($detail['notice_content']), 0, 80)."..."?></p>
                                 </div>
                             </div>
-                            <div class="carousel-item">
-                                <img src="assets/img/banner2.png" class="d-block w-100" alt="..." />
-                                <div class="carousel-caption d-none d-md-block">
-                                    <h5>First slide label</h5>
-                                    <p>Some representative placeholder content for the first slide.</p>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <img src="assets/img/banner1.png" class="d-block w-100" alt="..." />
-                                <div class="carousel-caption d-none d-md-block">
-                                    <h5>First slide label</h5>
-                                    <p>Some representative placeholder content for the first slide.</p>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <img src="assets/img/banner2.png" class="d-block w-100" alt="..." />
-                                <div class="carousel-caption d-none d-md-block">
-                                    <h5>First slide label</h5>
-                                    <p>Some representative placeholder content for the first slide.</p>
-                                </div>
-                            </div>
+
+                            <?php }?>
+
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
                             data-bs-slide="prev">
@@ -100,57 +82,33 @@
         </div>
         <div class="container">
             <div class="row">
+
+                <?php foreach ($notices as $key => $notice) {
+                    
+                    $date = explode(" ", $notice['created_at']);
+                    // var_dump($date);
+                ?>
+
                 <div class="col-md-4 mb-3">
                     <a href="" class="notice__link">
                         <div class="notice__card">
-                            <img src="assets/img/banner1.png" alt="">
+                            <img src="Admin/public/img/notices/<?php echo $notice['notice_image']?>" alt="">
 
-                            <div class="card-date">
-                                Publicado em: 12/12/2023
+                            <div class="card-date mt-2">
+                                Publicado em: <?php echo $date[0];?>
                             </div>
                             <div class="notice-title">
-                                MV retorna ao Volta Redonda após empréstimo ao Ypiranga-RS
+                                <?php echo $notice['notice_title']?>
                             </div>
                             <div class="notice-content">
-                                Após período de empréstimo junto ao Ypiranga-RS, onde atuou em 33 partidas em 2023...
+                                <?php echo substr(strip_tags($notice['notice_content']), 0, 140)."..."?>
                             </div>
                         </div>
                     </a>
                 </div>
-                <div class="col-md-4 mb-3">
-                    <a href="" class="notice__link">
-                        <div class="notice__card">
-                            <img src="assets/img/banner2.png" alt="">
 
-                            <div class="card-date">
-                                Publicado em: 12/12/2023
-                            </div>
-                            <div class="notice-title">
-                                PREPARADOR FÍSICO AVALIA PRIMEIRA SEMANA DE PRÉ-TEMPORADA DO VOLTAÇO
-                            </div>
-                            <div class="notice-content">
-                                Após período de empréstimo junto ao Ypiranga-RS, onde atuou em 33 partidas em 2023...
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <a href="" class="notice__link">
-                        <div class="notice__card">
-                            <img src="assets/img/banner1.png" alt="">
+                <?php }?>
 
-                            <div class="card-date">
-                                Publicado em: 12/12/2023
-                            </div>
-                            <div class="notice-title">
-                                MV retorna ao Volta Redonda após empréstimo ao Ypiranga-RS
-                            </div>
-                            <div class="notice-content">
-                                Após período de empréstimo junto ao Ypiranga-RS, onde atuou em 33 partidas em 2023...
-                            </div>
-                        </div>
-                    </a>
-                </div>
             </div>
 
             <div class="row mt-5">
@@ -478,4 +436,65 @@
         </div>
     </section>
 
-<?php include 'includes/footer.php'?>
+    <section class="sponsors__sec pb-5">
+        <div class="container section__title">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3>Nossos Patrocinadores</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 text-center"><img style="width: 50%;" src="assets/img/Sponsors/1.png" alt=""></div>
+                <div class="col-md-3 text-center"><img style="width: 50%;" src="assets/img/Sponsors/2.png" alt=""></div>
+                <div class="col-md-3 text-center"><img style="width: 50%;" src="assets/img/Sponsors/3.png" alt=""></div>
+                <div class="col-md-3 text-center"><img style="width: 50%;" src="assets/img/Sponsors/4.png" alt=""></div>
+                <div class="col-md-3 text-center"><img style="width: 50%;" src="assets/img/Sponsors/5.png" alt=""></div>
+                <div class="col-md-3 text-center"><img style="width: 50%;" src="assets/img/Sponsors/6.png" alt=""></div>
+                <div class="col-md-3 text-center"><img style="width: 50%;" src="assets/img/Sponsors/7.png" alt=""></div>
+                <div class="col-md-3 text-center"><img style="width: 50%;" src="assets/img/Sponsors/8.png" alt=""></div>
+                <div class="col-md-3 text-center"><img style="width: 50%;" src="assets/img/Sponsors/9.png" alt=""></div>
+                <div class="col-md-3 text-center"><img style="width: 50%;" src="assets/img/Sponsors/10.png" alt=""></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="sponsors__sec pb-5">
+        <div class="container section__title">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3>Nossos Parceiros</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 text-center"><img style="width: 50%;" src="assets/img/Sponsors/11.webp" alt=""></div>
+                <div class="col-md-3 text-center"><img style="width: 50%;" src="assets/img/Sponsors/12.webp" alt=""></div>
+                <div class="col-md-3 text-center"><img style="width: 50%;" src="assets/img/Sponsors/13.webp" alt=""></div>
+                <div class="col-md-3 text-center"><img style="width: 50%;" src="assets/img/Sponsors/14.webp" alt=""></div>
+                <div class="col-md-3 text-center"><img style="width: 50%;" src="assets/img/Sponsors/15.webp" alt=""></div>
+                <div class="col-md-3 text-center"><img style="width: 50%;" src="assets/img/Sponsors/16.webp" alt=""></div>
+                <div class="col-md-3 text-center"><img style="width: 50%;" src="assets/img/Sponsors/17.webp" alt=""></div>
+                <div class="col-md-3 text-center"><img style="width: 50%;" src="assets/img/Sponsors/18.webp" alt=""></div>
+                <div class="col-md-3 text-center"><img style="width: 50%;" src="assets/img/Sponsors/19.webp" alt=""></div>
+                <div class="col-md-3 text-center"><img style="width: 50%;" src="assets/img/Sponsors/20.webp" alt=""></div>
+                <div class="col-md-3 text-center"><img style="width: 50%;" src="assets/img/Sponsors/21.webp" alt=""></div>
+                <div class="col-md-3 text-center"><img style="width: 50%;" src="assets/img/Sponsors/22.webp" alt=""></div>
+                <div class="col-md-3 text-center"><img style="width: 50%;" src="assets/img/Sponsors/23.webp" alt=""></div>
+                <div class="col-md-3 text-center"><img style="width: 50%;" src="assets/img/Sponsors/24.webp" alt=""></div>
+                <div class="col-md-3 text-center"><img style="width: 50%;" src="assets/img/Sponsors/25.webp" alt=""></div>
+                <div class="col-md-3 text-center"><img style="width: 50%;" src="assets/img/Sponsors/26.webp" alt=""></div>
+                <div class="col-md-3 text-center"><img style="width: 50%;" src="assets/img/Sponsors/27.webp" alt=""></div>
+                <div class="col-md-3 text-center"><img style="width: 50%;" src="assets/img/Sponsors/28.webp" alt=""></div>
+                <div class="col-md-3 text-center"><img style="width: 50%;" src="assets/img/Sponsors/29.webp" alt=""></div>
+                <div class="col-md-3 text-center"><img style="width: 50%;" src="assets/img/Sponsors/30.webp" alt=""></div>
+                <div class="col-md-3 text-center"><img style="width: 50%;" src="assets/img/Sponsors/31.webp" alt=""></div>
+            </div>
+        </div>
+    </section>
+
+    <?php include 'includes/footer.php'?>

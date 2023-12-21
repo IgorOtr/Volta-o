@@ -1,5 +1,11 @@
 <?php
-    include 'includes/head.php';
+
+require 'Admin/src/classes/Notice.php';
+ 
+$class = new Notice();
+$notices = $class->getNoticesToFront();
+
+include 'includes/head.php';
 ?>
 
 <body>
@@ -15,108 +21,32 @@
         </div>
         <div class="container">
             <div class="row">
+
+            <?php foreach ($notices as $key => $notice) {
+                
+                $date = explode(" ", $notice['created_at']);
+            ?>
+
                 <div class="col-md-4 mb-3">
                     <a href="" class="notice__link">
                         <div class="notice__card">
-                            <img src="assets/img/banner1.png" alt="">
+                            <img src="Admin/public/img/notices/<?php echo $notice['notice_image']?>" alt="">
 
                             <div class="card-date">
-                                Publicado em: 12/12/2023
+                                Publicado em: <?php echo $date[0]?>
                             </div>
                             <div class="notice-title">
-                                MV retorna ao Volta Redonda após empréstimo ao Ypiranga-RS
+                                <?php echo $notice['notice_title']?>
                             </div>
                             <div class="notice-content">
-                                Após período de empréstimo junto ao Ypiranga-RS, onde atuou em 33 partidas em 2023...
+                                <?php echo substr(strip_tags($notice['notice_content']), 0, 140)."..."?>
                             </div>
                         </div>
                     </a>
                 </div>
-                <div class="col-md-4 mb-3">
-                    <a href="" class="notice__link">
-                        <div class="notice__card">
-                            <img src="assets/img/banner2.png" alt="">
 
-                            <div class="card-date">
-                                Publicado em: 12/12/2023
-                            </div>
-                            <div class="notice-title">
-                                PREPARADOR FÍSICO AVALIA PRIMEIRA SEMANA DE PRÉ-TEMPORADA DO VOLTAÇO
-                            </div>
-                            <div class="notice-content">
-                                Após período de empréstimo junto ao Ypiranga-RS, onde atuou em 33 partidas em 2023...
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <a href="" class="notice__link">
-                        <div class="notice__card">
-                            <img src="assets/img/banner1.png" alt="">
-
-                            <div class="card-date">
-                                Publicado em: 12/12/2023
-                            </div>
-                            <div class="notice-title">
-                                MV retorna ao Volta Redonda após empréstimo ao Ypiranga-RS
-                            </div>
-                            <div class="notice-content">
-                                Após período de empréstimo junto ao Ypiranga-RS, onde atuou em 33 partidas em 2023...
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <a href="" class="notice__link">
-                        <div class="notice__card">
-                            <img src="assets/img/banner1.png" alt="">
-
-                            <div class="card-date">
-                                Publicado em: 12/12/2023
-                            </div>
-                            <div class="notice-title">
-                                MV retorna ao Volta Redonda após empréstimo ao Ypiranga-RS
-                            </div>
-                            <div class="notice-content">
-                                Após período de empréstimo junto ao Ypiranga-RS, onde atuou em 33 partidas em 2023...
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <a href="" class="notice__link">
-                        <div class="notice__card">
-                            <img src="assets/img/banner2.png" alt="">
-
-                            <div class="card-date">
-                                Publicado em: 12/12/2023
-                            </div>
-                            <div class="notice-title">
-                                PREPARADOR FÍSICO AVALIA PRIMEIRA SEMANA DE PRÉ-TEMPORADA DO VOLTAÇO
-                            </div>
-                            <div class="notice-content">
-                                Após período de empréstimo junto ao Ypiranga-RS, onde atuou em 33 partidas em 2023...
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <a href="" class="notice__link">
-                        <div class="notice__card">
-                            <img src="assets/img/banner1.png" alt="">
-
-                            <div class="card-date">
-                                Publicado em: 12/12/2023
-                            </div>
-                            <div class="notice-title">
-                                MV retorna ao Volta Redonda após empréstimo ao Ypiranga-RS
-                            </div>
-                            <div class="notice-content">
-                                Após período de empréstimo junto ao Ypiranga-RS, onde atuou em 33 partidas em 2023...
-                            </div>
-                        </div>
-                    </a>
-                </div>
+            <?php }?>
+                
             </div>
 
         </div>

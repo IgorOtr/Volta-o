@@ -1,6 +1,6 @@
 <?php
 
-define("SITE_URL", 'http://'.$_SERVER['HTTP_HOST'].'/Voltaco/');
+@define("SITE_URL", 'http://'.$_SERVER['HTTP_HOST'].'/Voltaco/');
 $db_user = "root";
 $db_password = "";
 $db_host = "localhost";

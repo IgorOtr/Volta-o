@@ -63,7 +63,7 @@ $class = new Notice();
 
                         <div class="col-md-4">
                             <div class="card" style="">
-                                <?php echo $destaque = ($notice['notice_category'] === 'destaque') ? '<span class="badge bg-danger" style="position: absolute; left: 10px; top: 10px;">Destaque</span>' : ''?>
+                                <?php echo $destaque = ($notice['notice_category'] === 'Destaque') ? '<span class="badge bg-danger" style="position: absolute; left: 10px; top: 10px;">Destaque</span>' : ''?>
                                 <img src="<?php echo SITE_URL.'/Admin/public/img/notices/'.$notice['notice_image']?>"
                                     class="card-img-top" alt="...">
                                 <div class="card-body">

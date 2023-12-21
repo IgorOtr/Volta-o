@@ -17,15 +17,36 @@ if (isset($_POST['add_notice'])) {
     $created_at = date('d/m/Y h:m:s');
     $updated_at = null;
 
-    // echo '<pre>';
-    // var_dump($_FILES);
-    // echo '</pre>';
-
     $uploadImageToFolder = $class->uploadImagetoFolder($img);
 
         if ($uploadImageToFolder[0] === true) {
             
             $insertNotice = $class->insertNotice($title, $content, $uploadImageToFolder[1], $category, $status, $created_at, $updated_at);
+        }
+}
+
+if (isset($_POST['edit_notice'])) {
+
+    $id = $_POST['notice_id'];
+    $title = $_POST['notice_title'];
+    $content = $_POST['notice_content'];
+    $image = $_FILES['notice_image'];
+    $category = $_POST['notice_category'];
+    $updated_at = date('d/m/Y h:m:s');
+
+    $hasImage = empty($image['name']);
+
+        if ($hasImage) {
+
+            $alter = $class->alterNotice($id, $title, $content, $category, $updated_at);
+        } else { 
+
+            $uploadImageToFolder = $class->uploadImagetoFolder($image);
+
+                if ($uploadImageToFolder[0] === true) {
+                
+                    $insertNotice = $class->alterNoticeWithImage($id, $title, $content, $uploadImageToFolder[1], $category, $updated_at);
+                }
         }
 }
 
