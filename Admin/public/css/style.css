@@ -83,6 +83,26 @@ body {
     font-size: 14px;
 }
 
+.bx-edit {
+    font-size: 18px;
+}
+
+.bx-trash {
+    font-size: 18px;
+}
+
+.bx-search {
+    font-size: 18px;
+}
+
+.bx-block {
+    font-size: 18px;
+}
+
+.bx-check-circle {
+    font-size: 18px;
+}
+
 .dropstart .dropdown-toggle::before {
     display: none;
 }

@@ -2,6 +2,21 @@
     session_start();
     include 'session.php';
     include 'includes/head.php';
+    include 'src/classes/Notice.php';
+
+    $action = isset($_GET['action']) ? $_GET['action'] : '';
+
+    $id = isset($_GET['id']) ? $_GET['id'] : '';
+
+    $class = new Notice();
+
+    $notice = $class->getNoticeFromID($id);
+
+    echo '<pre>';
+    var_dump($notice);
+    echo '</pre>';
+
+    include 'includes/head.php';
 ?>
 
 <body>
@@ -13,7 +28,7 @@
 
         <div class="container">
 
-        <?php 
+            <?php 
             if (isset($_SESSION['notice_added'])) { 
 
                 echo $_SESSION['notice_added'];
@@ -29,11 +44,13 @@
                 </div>
             </div>
 
-        <?php }?>
+            <?php }?>
+
+            <?php if ($action == 'edit') {?>
 
             <div class="row mb-5">
                 <div class="col-md-12 text-center">
-                    <h1 class="page__title">Nova Notícia</h1>
+                    <h1 class="page__title">Altere essa notícia</h1>
                 </div>
             </div>
 
@@ -41,32 +58,35 @@
 
                 <div class="row mb-5">
                     <div class="col">
-                        <label for="exampleFormControlInput1" class="form-label">Escreva um título para essa Notícia:</label>
-                        <input name="notice_title" type="text" class="form-control" placeholder="Título da Notícia:" required>
+                        <label for="exampleFormControlInput1" class="form-label">Escreva um título para essa
+                            Notícia:</label>
+                        <input name="notice_title" type="text" class="form-control" placeholder="Título da Notícia:"
+                            required>
                     </div>
                     <div class="col">
                         <label for="exampleFormControlInput1" class="form-label">Adicione uma Imagem:</label>
                         <input name="notice_image" type="file" class="form-control" id="inputGroupFile02" required>
                     </div>
                 </div>
-    
+
                 <div class="row mb-5">
                     <div class="col-md-12">
                         <textarea name="notice_content" id="summernote" rows="10" required></textarea>
                     </div>
                 </div>
-    
+
                 <div class="row mb-5">
                     <div class="col">
                         <label for="exampleFormControlInput1" class="form-label">Escolha uma opção:</label>
-                        <select class="form-select form-select-sm" aria-label="Small select example" name="notice_category">
+                        <select class="form-select form-select-sm" aria-label="Small select example"
+                            name="notice_category">
                             <option selected>Selecione uma Opção</option>
                             <option value="destaque">Destaque</option>
                             <option value="comum">Notícia Comum</option>
                         </select>
                     </div>
                 </div>
-    
+
                 <div class="row mb-5">
                     <div class="col">
                         <button type="submit" class="btn btn-warning w-100 mb-4" name="add_notice"
@@ -75,6 +95,63 @@
                 </div>
 
             </form>
+            <?php }else{?>
+
+            <div class="row mb-5">
+                <div class="col-md-12 text-center">
+                    <h1 class="page__title">Nova Notícia</h1>
+                </div>
+            </div>
+
+
+            <form action="src/controllers/NoticeController.php" method="post" enctype="multipart/form-data">
+
+                <div class="row mb-5">
+                    <div class="col">
+                        <label for="exampleFormControlInput1" class="form-label">Escreva um título para essa
+                            Notícia:</label>
+                        <input name="notice_title" type="text" class="form-control" placeholder="Título da Notícia:"
+                            required>
+                    </div>
+                    <div class="col">
+                        <label for="exampleFormControlInput1" class="form-label">Adicione uma Imagem:</label>
+                        <input name="notice_image" type="file" class="form-control" id="inputGroupFile02" required>
+                    </div>
+                </div>
+
+                <div class="row mb-5">
+                    <div class="col-md-12">
+                        <textarea name="notice_content" id="summernote" rows="10" required></textarea>
+                    </div>
+                </div>
+
+                <div class="row mb-5">
+                    <div class="col">
+                        <label for="exampleFormControlInput1" class="form-label">Escolha uma opção:</label>
+                        <select class="form-select form-select-sm" aria-label="Small select example"
+                            name="notice_category">
+                            <option selected>Selecione uma Opção</option>
+                            <option value="destaque">Destaque</option>
+                            <option value="comum">Notícia Comum</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row mb-5">
+                    <div class="col">
+                        <button type="submit" class="btn btn-warning w-100 mb-4" name="add_notice"
+                            style="color: #000000; font-weight: 600;">Publicar Notícia</button>
+                    </div>
+                </div>
+
+            </form>
+
+            <?php }?>
+
+
+
+
+
         </div>
     </section>
 

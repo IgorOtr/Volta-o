@@ -3,6 +3,42 @@
 
 class Notice{
 
+    public function getNoticeFromID(string $id) 
+    {
+        require 'src/db/connect.php';  
+        
+        $sql = "SELECT * FROM notices WHERE id = :id";
+
+        $select = $conn->prepare($sql);
+        $select->bindValue(':id', $id);
+
+        $success = $select->execute();
+
+            if ($success) {
+
+                $data = $select->fetchAll();
+                return $data;
+            }
+    }
+
+    public function getNoticesToFront()
+    {
+        require 'Admin/src/db/connect.php';
+
+        $sql = "SELECT * FROM notices WHERE notice_status = :ativo";
+        
+        $select = $conn->prepare($sql);
+        $select->bindValue(':ativo', 'Ativo');
+
+        $success = $select->execute();
+
+            if ($success) {
+
+                $data = $select->fetchAll();
+                return $data;
+            }
+    }
+
     public function getAllNotices()
     {
         require 'src/db/connect.php';
@@ -106,6 +142,62 @@ class Notice{
 
                 header('location:'.SITE_URL.'Admin/add-notice.php');
             }
+    }
+
+    public function changeStatus(string $id, string $statusSet)
+    {
+        require '../db/connect.php';
+
+        $sql = "UPDATE notices SET notice_status = :notice_status WHERE id = :id";
+
+        $update = $conn->prepare($sql);
+        $update->bindValue(':notice_status', $statusSet);
+        $update->bindValue(':id', $id);
+
+        $success = $update->execute();
+
+            if ($success) {
+
+                $_SESSION['action_success'] = '
+                <div class="row">
+                    <div class="col">
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            Operação realizada <strong>com sucesso!</strong>.
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    </div>
+                </div>';
+
+                header('Location:'.SITE_URL.'Admin/noticias.php');
+            }
+    }
+
+    public function deleteNotice(string $id)
+    {
+        require '../db/connect.php';
+
+        $sql = "DELETE FROM notices WHERE id = :id";
+
+        $delete = $conn->prepare($sql);
+        $delete->bindValue(':id', $id);
+        
+        $success = $delete->execute();
+
+            if ($success) {
+
+                $_SESSION['action_success'] = '
+                <div class="row">
+                    <div class="col">
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            Notícia removida <strong>com sucesso!</strong>.
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    </div>
+                </div>';
+
+                header('Location:'.SITE_URL.'Admin/noticias.php');
+            }
+
     }
 
 }

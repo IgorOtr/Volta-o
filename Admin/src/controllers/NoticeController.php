@@ -5,6 +5,8 @@ require '../classes/Notice.php';
 
 $class = new Notice();
 
+$action = isset($_GET['action']) ? $_GET['action'] : '';
+
 if (isset($_POST['add_notice'])) {
     
     $img = $_FILES['notice_image'];
@@ -26,3 +28,23 @@ if (isset($_POST['add_notice'])) {
             $insertNotice = $class->insertNotice($title, $content, $uploadImageToFolder[1], $category, $status, $created_at, $updated_at);
         }
 }
+
+if ($action === 'delete') {
+    $id = $_GET['id'];
+
+    $delete = $class->deleteNotice($id);
+}
+
+if ($action === 'changeStatus') {
+
+    $id = $_GET['id'];
+    $newStatus = $_GET['set'];
+
+    echo $id;
+
+    echo $newStatus;
+
+    $change = $class->changeStatus($id, $newStatus);
+}
+
+
