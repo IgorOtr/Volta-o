@@ -3,6 +3,24 @@
 
 class Notice{
 
+    public function getNoticeDetails(string $id)
+    {
+        require 'Admin/src/db/connect.php';  
+        
+        $sql = "SELECT * FROM notices WHERE id = :id";
+
+        $select = $conn->prepare($sql);
+        $select->bindValue(':id', $id);
+
+        $success = $select->execute();
+
+            if ($success) {
+
+                $data = $select->fetchAll();
+                return $data;
+            }
+    }
+
     public function getNoticeFromID(string $id) 
     {
         require 'src/db/connect.php';  

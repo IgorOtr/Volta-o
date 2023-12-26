@@ -1,6 +1,6 @@
 <?php
     require 'Admin/src/classes/Notice.php';
-
+    $page = 'index';
     $class = new Notice();
     $notices = $class->getNoticesToFront();
     $details = $class->getDestaques();
@@ -14,7 +14,7 @@
     <section class="first__view__sec pt-5 pb-5">
         <div class="container">
             <div class="row">
-                <div class="col-md-8">
+                <div class="col-md-8 mb-3">
                     <div id="carouselExampleCaptions" class="carousel slide">
                         <span class="badge text-bg-warning">Destaque</span>
                         <div class="carousel-inner">
@@ -22,12 +22,14 @@
                             <?php foreach ($details as $key => $detail) {?>
 
                             <div class="carousel-item active">
-                                <img src="Admin/public/img/notices/<?php echo $detail['notice_image']?>"
-                                    class="d-block w-100" alt="..." />
-                                <div class="carousel-caption d-none d-md-block">
-                                    <h5><?php echo $detail['notice_title']?></h5>
-                                    <p><?php echo substr(strip_tags($detail['notice_content']), 0, 80)."..."?></p>
-                                </div>
+                                <a href="<?php echo SITE_URL.'detalhes.php?id='.$detail['id']?>">
+                                    <img src="Admin/public/img/notices/<?php echo $detail['notice_image']?>"
+                                        class="d-block w-100" alt="..." />
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5><?php echo $detail['notice_title']?></h5>
+                                        <p><?php echo substr(strip_tags($detail['notice_content']), 0, 80)."..."?></p>
+                                    </div>
+                                </a>
                             </div>
 
                             <?php }?>
@@ -45,7 +47,7 @@
                         </button>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 mb-3">
                     <div class="col-md-12 mb-4">
                         <div class="card">
                             <div class="div_card_title text-center">
@@ -75,8 +77,8 @@
     <section class="notices__sec pt-5 pb-5">
         <div class="container section__title">
             <div class="row">
-                <div class="col-md-12">
-                    <h3>Ultimas Notícias</h3>
+                <div class="col-md-12 text-center">
+                    <h3 style="font-weight: 800;">Ultimas Notícias</h3>
                 </div>
             </div>
         </div>
@@ -90,7 +92,7 @@
                 ?>
 
                 <div class="col-md-4 mb-3">
-                    <a href="" class="notice__link">
+                    <a href="<?php echo SITE_URL.'detalhes.php?id='.$notice['id']?>" class="notice__link">
                         <div class="notice__card">
                             <img src="Admin/public/img/notices/<?php echo $notice['notice_image']?>" alt="">
 
@@ -119,11 +121,12 @@
         </div>
     </section>
 
-    <section class="cast__sec pt-5 pb-5">
+
+    <section class="cast__sec pt-5 pb-5" id="elenco">
         <div class="container section__title">
             <div class="row">
-                <div class="col-md-12">
-                    <h3>Elenco</h3>
+                <div class="col-md-12 text-center">
+                    <h3 style="color: #000000; font-weight: 800;">Elenco</h3>
                 </div>
             </div>
         </div>
@@ -436,63 +439,299 @@
         </div>
     </section>
 
-    <section class="sponsors__sec pb-5">
+    <section class="notices__sec pt-5 pb-5">
+
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-4">
+                    <div class="cardPubli">
+
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="cardPubli">
+
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="cardPubli">
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+    <section class="sponsors__sec pb-5 pt-5">
         <div class="container section__title">
             <div class="row">
-                <div class="col-md-12">
-                    <h3>Nossos Patrocinadores</h3>
+                <div class="col-md-12 text-center">
+                    <h3 style="color: #000000; font-weight: 800;">Nossos Patrocinadores</h3>
                 </div>
             </div>
         </div>
 
         <div class="container">
             <div class="row">
-                <div class="col-md-3 text-center"><img style="width: 50%;" src="assets/img/Sponsors/1.png" alt=""></div>
-                <div class="col-md-3 text-center"><img style="width: 50%;" src="assets/img/Sponsors/2.png" alt=""></div>
-                <div class="col-md-3 text-center"><img style="width: 50%;" src="assets/img/Sponsors/3.png" alt=""></div>
-                <div class="col-md-3 text-center"><img style="width: 50%;" src="assets/img/Sponsors/4.png" alt=""></div>
-                <div class="col-md-3 text-center"><img style="width: 50%;" src="assets/img/Sponsors/5.png" alt=""></div>
-                <div class="col-md-3 text-center"><img style="width: 50%;" src="assets/img/Sponsors/6.png" alt=""></div>
-                <div class="col-md-3 text-center"><img style="width: 50%;" src="assets/img/Sponsors/7.png" alt=""></div>
-                <div class="col-md-3 text-center"><img style="width: 50%;" src="assets/img/Sponsors/8.png" alt=""></div>
-                <div class="col-md-3 text-center"><img style="width: 50%;" src="assets/img/Sponsors/9.png" alt=""></div>
-                <div class="col-md-3 text-center"><img style="width: 50%;" src="assets/img/Sponsors/10.png" alt=""></div>
+                <div class="col-md-12">
+                    <div class="owl-carousel owl-theme owl-loaded owl-drag">
+                        <div class="owl-stage-outer">
+                            <div class="owl-stage"
+                                style="transform: translate3d(-990px, 0px, 0px); transition: all 0.25s ease 0s; width: 2376px;">
+
+                                <div class="owl-item" style="width: 178px; margin-right: 20px;">
+                                    <div class="item">
+                                        <div class="cast__card__sponsors">
+                                            <img class="sponsors_logo" src="assets/img/Sponsors/1.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="owl-item" style="width: 178px; margin-right: 20px;">
+                                    <div class="item">
+                                        <div class="cast__card__sponsors">
+                                            <img class="sponsors_logo" src="assets/img/Sponsors/2.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="owl-item" style="width: 178px; margin-right: 20px;">
+                                    <div class="item">
+                                        <div class="cast__card__sponsors">
+                                            <img class="sponsors_logo" src="assets/img/Sponsors/3.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="owl-item" style="width: 178px; margin-right: 20px;">
+                                    <div class="item">
+                                        <div class="cast__card__sponsors">
+                                            <img class="sponsors_logo" src="assets/img/Sponsors/4.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="owl-item" style="width: 178px; margin-right: 20px;">
+                                    <div class="item">
+                                        <div class="cast__card__sponsors">
+                                            <img class="sponsors_logo" src="assets/img/Sponsors/5.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="owl-item" style="width: 178px; margin-right: 20px;">
+                                    <div class="item">
+                                        <div class="cast__card__sponsors">
+                                            <img class="sponsors_logo" src="assets/img/Sponsors/6.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="owl-item" style="width: 178px; margin-right: 20px;">
+                                    <div class="item">
+                                        <div class="cast__card__sponsors">
+                                            <img class="sponsors_logo" src="assets/img/Sponsors/7.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="owl-item" style="width: 178px; margin-right: 20px;">
+                                    <div class="item">
+                                        <div class="cast__card__sponsors">
+                                            <img class="sponsors_logo" src="assets/img/Sponsors/8.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="owl-item" style="width: 178px; margin-right: 20px;">
+                                    <div class="item">
+                                        <div class="cast__card__sponsors">
+                                            <img class="sponsors_logo" src="assets/img/Sponsors/9.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="owl-item" style="width: 178px; margin-right: 20px;">
+                                    <div class="item">
+                                        <div class="cast__card__sponsors">
+                                            <img class="sponsors_logo" src="assets/img/Sponsors/10.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="sponsors__sec pb-5">
+    <section class="sponsors__sec pb-5 pt-3">
         <div class="container section__title">
             <div class="row">
-                <div class="col-md-12">
-                    <h3>Nossos Parceiros</h3>
+                <div class="col-md-12 text-center">
+                    <h3 style="color: #000000; font-weight: 800;">Nossos Parceiros</h3>
                 </div>
             </div>
         </div>
 
         <div class="container">
             <div class="row">
-                <div class="col-md-3 text-center"><img style="width: 50%;" src="assets/img/Sponsors/11.webp" alt=""></div>
-                <div class="col-md-3 text-center"><img style="width: 50%;" src="assets/img/Sponsors/12.webp" alt=""></div>
-                <div class="col-md-3 text-center"><img style="width: 50%;" src="assets/img/Sponsors/13.webp" alt=""></div>
-                <div class="col-md-3 text-center"><img style="width: 50%;" src="assets/img/Sponsors/14.webp" alt=""></div>
-                <div class="col-md-3 text-center"><img style="width: 50%;" src="assets/img/Sponsors/15.webp" alt=""></div>
-                <div class="col-md-3 text-center"><img style="width: 50%;" src="assets/img/Sponsors/16.webp" alt=""></div>
-                <div class="col-md-3 text-center"><img style="width: 50%;" src="assets/img/Sponsors/17.webp" alt=""></div>
-                <div class="col-md-3 text-center"><img style="width: 50%;" src="assets/img/Sponsors/18.webp" alt=""></div>
-                <div class="col-md-3 text-center"><img style="width: 50%;" src="assets/img/Sponsors/19.webp" alt=""></div>
-                <div class="col-md-3 text-center"><img style="width: 50%;" src="assets/img/Sponsors/20.webp" alt=""></div>
-                <div class="col-md-3 text-center"><img style="width: 50%;" src="assets/img/Sponsors/21.webp" alt=""></div>
-                <div class="col-md-3 text-center"><img style="width: 50%;" src="assets/img/Sponsors/22.webp" alt=""></div>
-                <div class="col-md-3 text-center"><img style="width: 50%;" src="assets/img/Sponsors/23.webp" alt=""></div>
-                <div class="col-md-3 text-center"><img style="width: 50%;" src="assets/img/Sponsors/24.webp" alt=""></div>
-                <div class="col-md-3 text-center"><img style="width: 50%;" src="assets/img/Sponsors/25.webp" alt=""></div>
-                <div class="col-md-3 text-center"><img style="width: 50%;" src="assets/img/Sponsors/26.webp" alt=""></div>
-                <div class="col-md-3 text-center"><img style="width: 50%;" src="assets/img/Sponsors/27.webp" alt=""></div>
-                <div class="col-md-3 text-center"><img style="width: 50%;" src="assets/img/Sponsors/28.webp" alt=""></div>
-                <div class="col-md-3 text-center"><img style="width: 50%;" src="assets/img/Sponsors/29.webp" alt=""></div>
-                <div class="col-md-3 text-center"><img style="width: 50%;" src="assets/img/Sponsors/30.webp" alt=""></div>
-                <div class="col-md-3 text-center"><img style="width: 50%;" src="assets/img/Sponsors/31.webp" alt=""></div>
+
+                <div class="col-md-12">
+                    <div class="owl-carousel owl-theme owl-loaded owl-drag">
+                        <div class="owl-stage-outer">
+                            <div class="owl-stage"
+                                style="transform: translate3d(-990px, 0px, 0px); transition: all 0.25s ease 0s; width: 2376px;">
+
+                                <div class="owl-item" style="width: 178px; margin-right: 20px;">
+                                    <div class="item">
+                                        <div class="cast__card__sponsors">
+                                            <img class="sponsors_logo" src="assets/img/Sponsors/11.webp" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="owl-item" style="width: 178px; margin-right: 20px;">
+                                    <div class="item">
+                                        <div class="cast__card__sponsors">
+                                            <img class="sponsors_logo" src="assets/img/Sponsors/12.webp" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="owl-item" style="width: 178px; margin-right: 20px;">
+                                    <div class="item">
+                                        <div class="cast__card__sponsors">
+                                            <img class="sponsors_logo" src="assets/img/Sponsors/13.webp" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="owl-item" style="width: 178px; margin-right: 20px;">
+                                    <div class="item">
+                                        <div class="cast__card__sponsors">
+                                            <img class="sponsors_logo" src="assets/img/Sponsors/14.webp" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="owl-item" style="width: 178px; margin-right: 20px;">
+                                    <div class="item">
+                                        <div class="cast__card__sponsors">
+                                            <img class="sponsors_logo" src="assets/img/Sponsors/15.webp" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="owl-item" style="width: 178px; margin-right: 20px;">
+                                    <div class="item">
+                                        <div class="cast__card__sponsors">
+                                            <img class="sponsors_logo" src="assets/img/Sponsors/16.webp" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="owl-item" style="width: 178px; margin-right: 20px;">
+                                    <div class="item">
+                                        <div class="cast__card__sponsors">
+                                            <img class="sponsors_logo" src="assets/img/Sponsors/17.webp" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="owl-item" style="width: 178px; margin-right: 20px;">
+                                    <div class="item">
+                                        <div class="cast__card__sponsors">
+                                            <img class="sponsors_logo" src="assets/img/Sponsors/18.webp" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="owl-item" style="width: 178px; margin-right: 20px;">
+                                    <div class="item">
+                                        <div class="cast__card__sponsors">
+                                            <img class="sponsors_logo" src="assets/img/Sponsors/19.webp" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="owl-item" style="width: 178px; margin-right: 20px;">
+                                    <div class="item">
+                                        <div class="cast__card__sponsors">
+                                            <img class="sponsors_logo" src="assets/img/Sponsors/20.webp" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="owl-item" style="width: 178px; margin-right: 20px;">
+                                    <div class="item">
+                                        <div class="cast__card__sponsors">
+                                            <img class="sponsors_logo" src="assets/img/Sponsors/21.webp" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="owl-item" style="width: 178px; margin-right: 20px;">
+                                    <div class="item">
+                                        <div class="cast__card__sponsors">
+                                            <img class="sponsors_logo" src="assets/img/Sponsors/22.webp" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="owl-item" style="width: 178px; margin-right: 20px;">
+                                    <div class="item">
+                                        <div class="cast__card__sponsors">
+                                            <img class="sponsors_logo" src="assets/img/Sponsors/23.webp" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="owl-item" style="width: 178px; margin-right: 20px;">
+                                    <div class="item">
+                                        <div class="cast__card__sponsors">
+                                            <img class="sponsors_logo" src="assets/img/Sponsors/24.webp" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="owl-item" style="width: 178px; margin-right: 20px;">
+                                    <div class="item">
+                                        <div class="cast__card__sponsors">
+                                            <img class="sponsors_logo" src="assets/img/Sponsors/25.webp" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="owl-item" style="width: 178px; margin-right: 20px;">
+                                    <div class="item">
+                                        <div class="cast__card__sponsors">
+                                            <img class="sponsors_logo" src="assets/img/Sponsors/26.webp" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="owl-item" style="width: 178px; margin-right: 20px;">
+                                    <div class="item">
+                                        <div class="cast__card__sponsors">
+                                            <img class="sponsors_logo" src="assets/img/Sponsors/27.webp" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="owl-item" style="width: 178px; margin-right: 20px;">
+                                    <div class="item">
+                                        <div class="cast__card__sponsors">
+                                            <img class="sponsors_logo" src="assets/img/Sponsors/28.webp" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="owl-item" style="width: 178px; margin-right: 20px;">
+                                    <div class="item">
+                                        <div class="cast__card__sponsors">
+                                            <img class="sponsors_logo" src="assets/img/Sponsors/29.webp" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="owl-item" style="width: 178px; margin-right: 20px;">
+                                    <div class="item">
+                                        <div class="cast__card__sponsors">
+                                            <img class="sponsors_logo" src="assets/img/Sponsors/30.webp" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="owl-item" style="width: 178px; margin-right: 20px;">
+                                    <div class="item">
+                                        <div class="cast__card__sponsors">
+                                            <img class="sponsors_logo" src="assets/img/Sponsors/31.webp" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

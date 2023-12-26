@@ -2,13 +2,13 @@
 
 <div class="container-fluid top_nav_bar">
     <div class="row">
-        <div class="col-md-5 d-flex align-items-center justify-content-end">
+        <div class="col-md-5 d-flex align-items-center justify-content-end vr__text__align">
             <h1 class="vr__text">VOLTA REDONDA</h1>
         </div>
         <div class="col-md-2 text-center">
             <img src="assets/img/logo.png" width="80" class="logo" alt="" />
         </div>
-        <div class="col-md-5 d-flex align-items-center">
+        <div class="col-md-5 d-flex align-items-center vr__text__align">
             <h1>FUTEBOL CLUBE</h1>
         </div>
     </div>
@@ -23,9 +23,9 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <ul class="navbar-nav" style="width: 100%; display: flex; justify-content: space-evenly;">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">HOME</a>
+                    <a class="nav-link active" aria-current="page" href="<?php echo SITE_URL?>">HOME</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -33,7 +33,7 @@
                         FUTEBOL
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Elenco Proficional</a></li>
+                        <li><a class="dropdown-item" href="<?php echo $elenco = ($page == 'index') ? '#elenco' : SITE_URL ?>">Elenco Proficional</a></li>
                         <li>
                             <hr class="dropdown-divider" />
                         </li>
@@ -75,12 +75,6 @@
                     <a class="nav-link active" aria-current="page" href="#">CONTATOS</a>
                 </li>
             </ul>
-            <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Search" />
-                <button class="btn search-btn" type="submit">
-                    <i class="bx bx-search"></i>
-                </button>
-            </form>
         </div>
     </div>
 </nav>

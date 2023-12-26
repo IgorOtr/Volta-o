@@ -117,8 +117,8 @@
             margin: 10,
             responsiveClass: true,
             nav: false,
-            // autoplay:true,
-            // autoplayTimeout:3000,
+            autoplay:true,
+            autoplayTimeout:3000,
             responsive: {
                 0: {
                     items: 1,

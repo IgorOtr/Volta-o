@@ -28,7 +28,7 @@ include 'includes/head.php';
             ?>
 
                 <div class="col-md-4 mb-3">
-                    <a href="" class="notice__link">
+                    <a href="<?php echo SITE_URL.'detalhes.php?id='.$notice['id']?>" class="notice__link">
                         <div class="notice__card">
                             <img src="Admin/public/img/notices/<?php echo $notice['notice_image']?>" alt="">
 

@@ -5,12 +5,12 @@
             <!-- Toggle button -->
             <button data-mdb-collapse-init class="navbar-toggler" type="button"
                 data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
+                aria-label="Toggle navigation" id="showNavbar">
                 <i class="fas fa-bars"></i>
             </button>
 
             <!-- Collapsible wrapper -->
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="collapse navbar-collapse navBarCollapsed" id="navbarSupportedContent">
                 <!-- Navbar brand -->
                 <a class="navbar-brand mt-2 mt-lg-0 logo" href="index.php">
                     <span>Gerencie </span>&nbsp;Voltaço

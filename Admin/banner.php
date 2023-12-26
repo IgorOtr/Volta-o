@@ -12,6 +12,4 @@
         
     </section>
 
-</body>
-
-</html>
+    <?php include 'includes/footer.php'?>

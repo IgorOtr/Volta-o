@@ -61,7 +61,7 @@ $class = new Notice();
                         '<a data-bs-toggle="tooltip" data-bs-placement="top" title="Desbloquear" href="'.SITE_URL.'Admin/src/controllers/NoticeController.php?action=changeStatus&set=Ativo&id='.$notice['id'].'" class="btn btn-danger"><i class="bx bx-check-circle"></i></a>' ;
                     ?>
 
-                        <div class="col-md-4">
+                        <div class="col-md-4 mb-3">
                             <div class="card" style="">
                                 <?php echo $destaque = ($notice['notice_category'] === 'Destaque') ? '<span class="badge bg-danger" style="position: absolute; left: 10px; top: 10px;">Destaque</span>' : ''?>
                                 <img src="<?php echo SITE_URL.'/Admin/public/img/notices/'.$notice['notice_image']?>"
@@ -95,13 +95,4 @@ $class = new Notice();
         </div>
     </section>
 
-    <script>
-        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-        var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
-            return new bootstrap.Tooltip(tooltipTriggerEl)
-        })
-    </script>
-
-</body>
-
-</html>
+<?php include 'includes/footer.php'?>

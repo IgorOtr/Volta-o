@@ -161,23 +161,4 @@
         </div>
     </section>
 
-    <script>
-    $('#summernote').summernote({
-        placeholder: 'Escreva sua notícia aqui:',
-        tabsize: 2,
-        height: 300,
-        toolbar: [
-            ['style', ['style']],
-            ['font', ['bold', 'underline', 'clear']],
-            ['color', ['color']],
-            ['para', ['ul', 'ol', 'paragraph']],
-            ['table', ['table']],
-            ['insert', ['link', 'picture', 'video']],
-            ['view', ['fullscreen', 'codeview', 'help']]
-        ]
-    });
-    </script>
-
-</body>
-
-</html>
+<?php include 'includes/footer.php'?>

@@ -21,7 +21,6 @@ footer h3 {
     color: #ffc800;
     font-weight: 600;
     margin-top: 20px;
-    text-transform: uppercase;
 }
 
 footer p {
@@ -47,6 +46,13 @@ footer ul li a {
     text-transform: uppercase;
 }
 footer ul li a:hover {
+    color: #393939;
+}
+.bx{
+    transition: .2s;
+}
+.bx:hover {
+    transition: .2s;
     color: #393939;
 }
 
@@ -285,6 +291,10 @@ footer ul li a:hover {
 
 .section__title h3 {
     color: #ffc800;
+    font-weight: 800;
+    font-size: 36px;
+    width: 100%;
+    text-align: justify;
 }
 
 .bx-search {
@@ -304,6 +314,18 @@ footer ul li a:hover {
     flex-direction: column;
 }
 
+.cast__card__sponsors {
+    padding: 8px;
+    border: 2px solid #e8e8e8;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    height: 210px;
+    overflow: hidden;
+}
+
 .cast__card img {
     width: 190px !important;
 }
@@ -320,7 +342,7 @@ footer ul li a:hover {
     color: #ffc800;
     font-size: 90px;
     position: absolute;
-    top: 105px;
+    top: 13%;
     right: -60px;
     transition: .2s;
 }
@@ -333,7 +355,7 @@ footer ul li a:hover {
     color: #ffc800;
     font-size: 90px;
     position: absolute;
-    top: 105px;
+    top: 13%;
     left: -60px;
     transition: .2s;
 }
@@ -371,3 +393,62 @@ footer ul li a:hover {
     font-size: 18px;
 }
 
+.sponsors_logo {
+    width: 80% !important; 
+    filter: grayscale(1);
+    transition: .2s;
+}
+
+.sponsors_logo:hover {
+    transition: .2s;
+    filter: grayscale(0);
+}
+
+.cardPubli {
+    padding: 116px;
+    background-image: url(../img/publi.jpg);
+    border-radius: 12px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+@media only screen and (max-width: 768px) {
+
+    .owl-next span {
+        color: #ffc800;
+        font-size: 90px;
+        position: absolute;
+        top: 13%;
+        right: 18px;
+        transition: .2s;
+    }
+
+    .owl-prev span {
+        color: #ffc800;
+        font-size: 90px;
+        position: absolute;
+        top: 13%;
+        left: 18px;
+        transition: .2s;
+    }
+
+    .owl-dots {
+        display: none !important;
+    }
+
+    .cast__card h5 {
+        font-size: 26px;
+        font-weight: 600;
+    }
+
+    .vr__text__align {
+        justify-content: center !important;
+    }
+
+    .logo {
+        left: 44%;
+        top: 2px;
+        width: 40px;
+    }
+
+}
