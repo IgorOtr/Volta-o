@@ -36,9 +36,9 @@
                             Jogos
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="next_match.php">Próximos Jogos&nbsp;<i
+                            <li><a class="dropdown-item" href="matches.php?act=next">Próximos Jogos&nbsp;<i
                                         class='bx bx-right-arrow-alt'></i></a></li>
-                            <li><a class="dropdown-item" href="last_match.php"><i class='bx bx-left-arrow-alt'></i>&nbsp;Jogos
+                            <li><a class="dropdown-item" href="matches.php?act=last"><i class='bx bx-left-arrow-alt'></i>&nbsp;Jogos
                                     Anteriores</a></li>
                         </ul>
                     </li>
