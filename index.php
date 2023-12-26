@@ -444,19 +444,19 @@
         <div class="container">
             <div class="row">
 
-                <div class="col-md-4">
+                <div class="col-md-4 mb-3 mt-3">
                     <div class="cardPubli">
 
                     </div>
                 </div>
 
-                <div class="col-md-4">
+                <div class="col-md-4 mb-3 mt-3">
                     <div class="cardPubli">
 
                     </div>
                 </div>
 
-                <div class="col-md-4">
+                <div class="col-md-4 mb-3 mt-3">
                     <div class="cardPubli">
 
                     </div>
@@ -471,7 +471,7 @@
         <div class="container section__title">
             <div class="row">
                 <div class="col-md-12 text-center">
-                    <h3 style="color: #000000; font-weight: 800;">Nossos Patrocinadores</h3>
+                    <h3 style="color: #000000; font-weight: 800;">Patrocinadores</h3>
                 </div>
             </div>
         </div>
@@ -567,7 +567,7 @@
         <div class="container section__title">
             <div class="row">
                 <div class="col-md-12 text-center">
-                    <h3 style="color: #000000; font-weight: 800;">Nossos Parceiros</h3>
+                    <h3 style="color: #000000; font-weight: 800;">Parceiros</h3>
                 </div>
             </div>
         </div>

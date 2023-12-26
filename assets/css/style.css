@@ -412,6 +412,14 @@ footer ul li a:hover {
     background-repeat: no-repeat;
 }
 
+@media only screen and (max-width: 1440px) {
+
+    .cardPubli {
+        padding: 96px;
+    }
+
+}
+
 @media only screen and (max-width: 768px) {
 
     .owl-next span {
