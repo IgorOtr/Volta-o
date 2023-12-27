@@ -179,7 +179,7 @@ footer ul li a:hover {
 
 .div_card_title {
     background-color: #ffc800;
-    padding: 12px;
+    padding: 3px;
 }
 
 .div_card_title h5 {
@@ -411,6 +411,16 @@ footer ul li a:hover {
     background-size: cover;
     background-repeat: no-repeat;
 }
+
+.match__info {
+    font-weight: 500;
+}
+
+.match__info i {
+    font-size: 22px;
+}
+
+
 
 @media only screen and (max-width: 1440px) {
 

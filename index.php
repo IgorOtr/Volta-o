@@ -1,9 +1,14 @@
 <?php
     require 'Admin/src/classes/Notice.php';
+    require 'Admin/src/classes/Match.php';
     $page = 'index';
-    $class = new Notice();
-    $notices = $class->getNoticesToFront();
-    $details = $class->getDestaques();
+    $class_notice = new Notice();
+    $class_matches = new Matches();
+    $notices = $class_notice->getNoticesToFront();
+    $details = $class_notice->getDestaques();
+
+    $next_matches = $class_matches->getTheNextMatch();
+    $last_matches = $class_matches->getTheLastMatch();
 
     include 'includes/head.php';
 ?>
@@ -53,9 +58,38 @@
                             <div class="div_card_title text-center">
                                 <h5 class="card-title">Próximo Jogo</h5>
                             </div>
-                            <div class="card-body">
 
+
+                            <?php foreach ($next_matches as $key => $next) {?>
+
+
+                            <div class="card-body">
+                                <div class="row p-2">
+                                    <div class="col-md-4 d-flex align-items-center justify-content-center">
+                                        <img src="assets/img/logo.png" alt="" width="45" srcset="">
+                                    </div>
+                                    <div class="col-md-4 text-center d-flex align-items-center justify-content-center">
+                                        <h1 style="font-size: 22px; font-weight: 600; color: #ffc800; margin: 0px;">X
+                                        </h1>
+                                    </div>
+                                    <div class="col-md-4 d-flex align-items-center justify-content-center">
+                                        <img src="Admin/public/img/times/<?php echo $next['adversary_img']?>" alt="" width="45" srcset="">
+                                    </div>
+                                </div>
+                                <div class="row pt-3 pb-3">
+                                    <div class="col-md-2"></div>
+                                    <div class="match__info col-md-8 text-center">
+                                        <i class='bx bx-calendar'></i> <?php echo $next['match_date']?> às <?php echo $next['match_time']?><br>
+                                        <i class='bx bx-map-pin'></i> <?php echo $next['match_local']?>
+                                    </div>
+                                    <div class="col-md-2"></div>
+                                </div>
                             </div>
+
+
+                            <?php }?>
+
+
                         </div>
                     </div>
                     <div class="col-md-12 mb-4">
@@ -63,9 +97,46 @@
                             <div class="div_card_title text-center">
                                 <h5 class="card-title">Jogo Anterior</h5>
                             </div>
-                            <div class="card-body">
 
-                            </div>
+
+
+                            <?php foreach ($last_matches as $key => $last) {?>
+
+
+                                <div class="card-body">
+                                    <div class="row p-2">
+                                        <div class="col-md-4 text-center d-flex justify-content-center">
+                                            <div class="col-md-12 d-flex align-items-center justify-content-center">
+                                                <img src="assets/img/logo.png" alt="" width="45" srcset="">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 text-center d-flex align-items-center justify-content-between">
+                                            <h3 style="margin: 0px; color: #000000; font-size: 26px;"><?php echo $last['score_vr']?></h3>
+                                            <h1 style="font-size: 22px; font-weight: 600; color: #ffc800; margin: 0px;">X</h1>
+                                            <h3 style="margin: 0px; color: #000000; font-size: 26px;"><?php echo $last['score_adversary']?></h3>
+                                        </div>
+                                        <div class="col-md-4 text-center d-flex justify-content-center">
+                                            <div class="col-md-12 d-flex align-items-center justify-content-center">
+                                                <img src="Admin/public/img/times/<?php echo $last['adversary_img']?>" alt="" width="45" srcset="">
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="row pt-3 pb-3">
+                                        <div class="col-md-2"></div>
+                                        <div class="match__info col-md-8 text-center">
+                                            <i class='bx bx-calendar'></i> <?php echo $last['match_date']?> às <?php echo $last['match_time']?><br>
+                                            <i class='bx bx-map-pin'></i> <?php echo $last['match_local']?>
+                                        </div>
+                                        <div class="col-md-2"></div>
+                                    </div>
+                                </div>
+
+
+                            <?php }?>
+
+
+
                         </div>
                     </div>
 
