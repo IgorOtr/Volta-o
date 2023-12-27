@@ -1,14 +1,17 @@
 <?php
     require 'Admin/src/classes/Notice.php';
     require 'Admin/src/classes/Match.php';
+    require 'Admin/src/classes/Banner.php';
     $page = 'index';
     $class_notice = new Notice();
     $class_matches = new Matches();
+    $class_banner = new Banner();
+
     $notices = $class_notice->getNoticesToFront();
     $details = $class_notice->getDestaques();
-
     $next_matches = $class_matches->getTheNextMatch();
     $last_matches = $class_matches->getTheLastMatch();
+    $banners = $class_banner->getBanners();
 
     include 'includes/head.php';
 ?>
@@ -515,23 +518,18 @@
         <div class="container">
             <div class="row">
 
-                <div class="col-md-4 mb-3 mt-3">
-                    <div class="cardPubli">
 
-                    </div>
-                </div>
-
-                <div class="col-md-4 mb-3 mt-3">
-                    <div class="cardPubli">
-
-                    </div>
-                </div>
+            <?php foreach ($banners as $key => $banner) {
+                
+                $link = empty($banner['banner_link']) ? '' : 'href="'.$banner['banner_link'].'" target="_blank"';
+            ?>
 
                 <div class="col-md-4 mb-3 mt-3">
-                    <div class="cardPubli">
-
-                    </div>
+                    <a <?php echo $link?> ><div class="cardPubli" style="background-image: url(Admin/public/img/banners/<?php echo $banner['banner_image']?>);"></div></a>
                 </div>
+                
+            <?php }?>
+
 
             </div>
         </div>
