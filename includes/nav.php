@@ -46,19 +46,19 @@
                         O CLUBE
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Nossa História</a></li>
+                        <li><a class="dropdown-item" href="<?php echo SITE_URL.'historia.php'?>">Nossa História</a></li>
                         <li>
                             <hr class="dropdown-divider" />
                         </li>
-                        <li><a class="dropdown-item" href="#">Hino</a></li>
+                        <li><a class="dropdown-item" href="<?php echo SITE_URL.'hino.php'?>">Hino</a></li>
                         <li>
                             <hr class="dropdown-divider" />
                         </li>
-                        <li><a class="dropdown-item" href="#">Principais Títulos</a></li>
+                        <li><a class="dropdown-item" href="<?php echo SITE_URL.'titulos.php'?>">Principais Títulos</a></li>
                         <li>
                             <hr class="dropdown-divider" />
                         </li>
-                        <li><a class="dropdown-item" href="#">Presidentes</a></li>
+                        <li><a class="dropdown-item" href="<?php echo SITE_URL.'presidentes.php'?>">Presidentes</a></li>
                         <li>
                             <hr class="dropdown-divider" />
                         </li>
@@ -69,7 +69,10 @@
                     <a class="nav-link active" aria-current="page" href="#">TRANSPARÊNCIA</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">VOLTAÇO TV</a>
+                    <a class="nav-link active" aria-current="page" href="https://www.eusouvoltaco.com.br/" target="_blank" >SEJA SÓCIO</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="https://www.youtube.com/@voltacotv76" target="_blank" >VOLTAÇO TV</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="#">CONTATOS</a>

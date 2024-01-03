@@ -58,7 +58,7 @@ $class = new Notice();
                         $delete = SITE_URL.'Admin/src/controllers/NoticeController.php?action=delete&id='.$notice['id']; 
                         $changeStatus = ($notice['notice_status'] == 'Ativo') ? 
                         '<a data-bs-toggle="tooltip" data-bs-placement="top" title="Bloquear" href="'.SITE_URL.'Admin/src/controllers/NoticeController.php?action=changeStatus&set=Bloq&id='.$notice['id'].'" class="btn btn-danger"><i class="bx bx-block"></i></a>' : 
-                        '<a data-bs-toggle="tooltip" data-bs-placement="top" title="Desbloquear" href="'.SITE_URL.'Admin/src/controllers/NoticeController.php?action=changeStatus&set=Ativo&id='.$notice['id'].'" class="btn btn-danger"><i class="bx bx-check-circle"></i></a>' ;
+                        '<a data-bs-toggle="tooltip" data-bs-placement="top" title="Desbloquear" href="'.SITE_URL.'Admin/src/controllers/NoticeController.php?action=changeStatus&set=Ativo&id='.$notice['id'].'" class="btn btn-success"><i class="bx bx-check-circle"></i></a>' ;
                     ?>
 
                         <div class="col-md-4 mb-3">
@@ -73,15 +73,14 @@ $class = new Notice();
                                         <?php echo substr(strip_tags($notice['notice_content']),0,120).'...'?>
                                     </p>
                                     <div class="row">
-                                        <div class="col-md-6">
+                                        <div class="col-md-12">
                                             <a data-bs-toggle="tooltip" data-bs-placement="top" title="Alterar"
                                                 href="<?php echo $edit?>" class="btn btn-warning"><i class='bx bx-edit'></i></a>
 
                                             <a data-bs-toggle="tooltip" data-bs-placement="top" title="Apagar"
                                                 href="<?php echo $delete?>" class="btn btn-danger"><i
                                                     class='bx bx-trash'></i></a>
-                                        </div>
-                                        <div class="col-md-6 text-end">
+
                                             <?php echo $changeStatus?>
                                         </div>
                                     </div>

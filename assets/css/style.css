@@ -419,7 +419,56 @@ footer ul li a:hover {
     font-size: 22px;
 }
 
+.section_title_pages {
+    background-image: url(../img/banner_pages.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: -770px;
+}
 
+.section_title_pages h1 {
+    color: #ffffff;
+    font-weight: 800;
+}
+
+.sec_history h2 {
+    color: #828282;
+    font-weight: 800;
+    font-size: 22px;
+    margin-bottom: 20px;
+    margin-top: 70px;
+}
+
+.sec_history h3 {
+    color: #828282;
+    font-weight: 800;
+    font-size: 14px;
+}
+
+.sec_history p {
+    color: #aaaaaa;
+    font-weight: 600;
+    text-align: justify;
+}
+
+.accordion-button:not(.collapsed) {
+    color: #ffffff;
+    background-color: #000000;
+    box-shadow: inset 0 calc(-1 * var(--bs-accordion-border-width)) 0 var(--bs-accordion-border-color);
+}
+
+.accordion-button:focus {
+    z-index: 3;
+    border-color: #000000;
+    outline: 0;
+    box-shadow: none;
+}
+
+.accordion-button {
+    color: #000000;
+    font-weight: 500;
+    background-color: #ffc800;
+}
 
 @media only screen and (max-width: 1440px) {
 
