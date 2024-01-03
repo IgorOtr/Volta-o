@@ -30,8 +30,7 @@
             <div class="row">
                 <div class="col">
                     <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                        Está página deve ser utilizada para <strong>adicionar imagens para as publicidades dos
-                            Patrocinadores e Parceiros.</strong>
+                        Está página deve ser utilizada para <strong>gerenciar o elenco e comissão técnica do time.</strong>
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                 </div>
@@ -191,7 +190,7 @@
                         <td><?php echo $membro['player_position']?></td>
                         <td>
                             <a href="<?php echo $edit?>" class="btn btn-warning"><i class='bx bx-edit'></i></a>
-                            <a data-bs-toggle="modal" data-bs-target="#exampleModal<?php echo $banner['id']?>"
+                            <a data-bs-toggle="modal" data-bs-target="#exampleModal<?php echo $membro['id']?>"
                                 class="btn btn-danger"><i class='bx bx-trash'></i></a>
                         </td>
                     </tr>

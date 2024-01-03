@@ -19,8 +19,28 @@ class Elenco {
         }
     }
 
+    public function selectAllPlayers()
+    {
+        require 'Admin/src/db/connect.php';
+
+
+        $sql = "SELECT * FROM elenco WHERE player_type <= 5 ORDER BY player_type ASC";
+
+        $select = $conn->prepare($sql);
+
+        if ($select->execute()) {
+
+            $data = $select->fetchAll();
+
+            return $data;
+        }
+    }
+
     public function formatPosition($type)
     {
+
+        require '../db/connect.php';
+
         switch ($type) {
 
             case '1':
@@ -73,8 +93,20 @@ class Elenco {
                 return 'Analista/Scout';
                 break;
             
-            default:
-                # code...
+            case '0':
+                
+                $_SESSION['notice_added'] = '
+                    <div class="row">
+                        <div class="col">
+                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                Posição Indisponével. <strong>Verifique e tente novamente.</strong>.
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        </div>
+                    </div>';
+
+                header('location:'.SITE_URL.'Admin/elenco.php');
+
                 break;
         }
     }

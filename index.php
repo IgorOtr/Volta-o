@@ -2,16 +2,24 @@
     require 'Admin/src/classes/Notice.php';
     require 'Admin/src/classes/Match.php';
     require 'Admin/src/classes/Banner.php';
+    require 'Admin/src/classes/Elenco.php';
     $page = 'index';
     $class_notice = new Notice();
     $class_matches = new Matches();
-    $class_banner = new Banner();
+    $class_banner = new Banner(); 
+    $class_elenco = new Elenco(); 
 
     $notices = $class_notice->getNoticesToFront();
     $details = $class_notice->getDestaques();
     $next_matches = $class_matches->getTheNextMatch();
     $last_matches = $class_matches->getTheLastMatch();
     $banners = $class_banner->getBanners();
+    $players = $class_elenco->selectAllPlayers();
+
+    // echo '<pre>';
+    // var_dump($players);
+    // echo '</pre>';
+    // die();
 
     include 'includes/head.php';
 ?>
@@ -212,298 +220,19 @@
                             <div class="owl-stage"
                                 style="transform: translate3d(-990px, 0px, 0px); transition: all 0.25s ease 0s; width: 2376px;">
 
-                                <!-- GOLEIROS -->
-                                <div class="owl-item" style="width: 178px; margin-right: 20px;">
-                                    <div class="item">
-                                        <div class="cast__card">
-                                            <img src="assets/img/Elenco/41.jpg" alt="">
-                                            <h5>Avelino</h5>
-                                            <p>Goleiro</p>
-                                        </div>
-                                    </div>
-                                </div>
+                                <?php foreach ($players as $key => $player) {?>
 
-                                <div class="owl-item" style="width: 178px; margin-right: 20px;">
-                                    <div class="item">
-                                        <div class="cast__card">
-                                            <img src="assets/img/Elenco/33.jpg" alt="">
-                                            <h5>Gustavo</h5>
-                                            <p>Goleiro</p>
+                                    <div class="owl-item" style="width: 178px; margin-right: 20px;">
+                                        <div class="item">
+                                            <div class="cast__card">
+                                                <img src="Admin/public/img/elenco/<?php echo $player['player_image']?>" alt="">
+                                                <h5><?php echo $player['player_name']?></h5>
+                                                <p><?php echo $player['player_position']?></p>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
 
-                                <div class="owl-item" style="width: 178px; margin-right: 20px;">
-                                    <div class="item">
-                                        <div class="cast__card">
-                                            <img src="assets/img/Elenco/31.jpg" alt="">
-                                            <h5>Jefferson</h5>
-                                            <p>Goleiro</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="owl-item" style="width: 178px; margin-right: 20px;">
-                                    <div class="item">
-                                        <div class="cast__card">
-                                            <img src="assets/img/Elenco/11-1.jpg" alt="">
-                                            <h5>Vinicius Dias</h5>
-                                            <p>Goleiro</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- ZAGUEIROS -->
-                                <div class="owl-item" style="width: 178px; margin-right: 20px;">
-                                    <div class="item">
-                                        <div class="cast__card">
-                                            <img src="assets/img/Elenco/43.jpg" alt="">
-                                            <h5>Alix</h5>
-                                            <p>Zagueiro</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="owl-item" style="width: 178px; margin-right: 20px;">
-                                    <div class="item">
-                                        <div class="cast__card">
-                                            <img src="assets/img/Elenco/39.jpg" alt="">
-                                            <h5>Daniel Felipe</h5>
-                                            <p>Zagueiro</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="owl-item" style="width: 178px; margin-right: 20px;">
-                                    <div class="item">
-                                        <div class="cast__card">
-                                            <img src="assets/img/Elenco/27.jpg" alt="">
-                                            <h5>Kaylan</h5>
-                                            <p>Zagueiro</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="owl-item" style="width: 178px; margin-right: 20px;">
-                                    <div class="item">
-                                        <div class="cast__card">
-                                            <img src="assets/img/Elenco/21.jpg" alt="">
-                                            <h5>Marco Gabriel</h5>
-                                            <p>Zagueiro</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="owl-item" style="width: 178px; margin-right: 20px;">
-                                    <div class="item">
-                                        <div class="cast__card">
-                                            <img src="assets/img/Elenco/14.jpg" alt="">
-                                            <h5>Sandro Silva</h5>
-                                            <p>Zagueiro</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- LATERAIS -->
-                                <div class="owl-item" style="width: 178px; margin-right: 20px;">
-                                    <div class="item">
-                                        <div class="cast__card">
-                                            <img src="assets/img/Elenco/34.jpg" alt="">
-                                            <h5>Gilson</h5>
-                                            <p>Lateral</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="owl-item" style="width: 178px; margin-right: 20px;">
-                                    <div class="item">
-                                        <div class="cast__card">
-                                            <img src="assets/img/Elenco/30.jpg" alt="">
-                                            <h5>Iury</h5>
-                                            <p>Lateral</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="owl-item" style="width: 178px; margin-right: 20px;">
-                                    <div class="item">
-                                        <div class="cast__card">
-                                            <img src="assets/img/Elenco/15.jpg" alt="">
-                                            <h5>Marcos Bebê</h5>
-                                            <p>Lateral</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="owl-item" style="width: 178px; margin-right: 20px;">
-                                    <div class="item">
-                                        <div class="cast__card">
-                                            <img src="assets/img/Elenco/16.jpg" alt="">
-                                            <h5>Ricardo Sena</h5>
-                                            <p>Lateral</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="owl-item" style="width: 178px; margin-right: 20px;">
-                                    <div class="item">
-                                        <div class="cast__card">
-                                            <img src="assets/img/Elenco/10.jpg" alt="">
-                                            <h5>Wellington Silva</h5>
-                                            <p>Lateral</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- MEIO CAMPISTA -->
-                                <div class="owl-item" style="width: 178px; margin-right: 20px;">
-                                    <div class="item">
-                                        <div class="cast__card">
-                                            <img src="assets/img/Elenco/38.jpg" alt="">
-                                            <h5>Bruno Barra</h5>
-                                            <p>Meio-Campista</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="owl-item" style="width: 178px; margin-right: 20px;">
-                                    <div class="item">
-                                        <div class="cast__card">
-                                            <img src="assets/img/Elenco/37.jpg" alt="">
-                                            <h5>Danrsley</h5>
-                                            <p>Meio-Campista</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="owl-item" style="width: 178px; margin-right: 20px;">
-                                    <div class="item">
-                                        <div class="cast__card">
-                                            <img src="assets/img/Elenco/36.jpg" alt="">
-                                            <h5>Dudu</h5>
-                                            <p>Meio-Campista</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="owl-item" style="width: 178px; margin-right: 20px;">
-                                    <div class="item">
-                                        <div class="cast__card">
-                                            <img src="assets/img/Elenco/32.jpg" alt="">
-                                            <h5>Henrique Silva</h5>
-                                            <p>Meio-Campista</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="owl-item" style="width: 178px; margin-right: 20px;">
-                                    <div class="item">
-                                        <div class="cast__card">
-                                            <img src="assets/img/Elenco/28.jpg" alt="">
-                                            <h5>Júlio César</h5>
-                                            <p>Meio-Campista</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="owl-item" style="width: 178px; margin-right: 20px;">
-                                    <div class="item">
-                                        <div class="cast__card">
-                                            <img src="assets/img/Elenco/25-1.jpg" alt="">
-                                            <h5>Luciano</h5>
-                                            <p>Meio-Campista</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Atacante -->
-                                <div class="owl-item" style="width: 178px; margin-right: 20px;">
-                                    <div class="item">
-                                        <div class="cast__card">
-                                            <img src="assets/img/Elenco/20.jpg" alt="">
-                                            <h5>Andrey</h5>
-                                            <p>Atacante</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="owl-item" style="width: 178px; margin-right: 20px;">
-                                    <div class="item">
-                                        <div class="cast__card">
-                                            <img src="assets/img/Elenco/40.jpg" alt="">
-                                            <h5>Berguinho</h5>
-                                            <p>Atacante</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="owl-item" style="width: 178px; margin-right: 20px;">
-                                    <div class="item">
-                                        <div class="cast__card">
-                                            <img src="assets/img/Elenco/35.jpg" alt="">
-                                            <h5>Guilherme Cachoeira</h5>
-                                            <p>Atacante</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="owl-item" style="width: 178px; margin-right: 20px;">
-                                    <div class="item">
-                                        <div class="cast__card">
-                                            <img src="assets/img/Elenco/26.jpg" alt="">
-                                            <h5>Lelê</h5>
-                                            <p>Atacante</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="owl-item" style="width: 178px; margin-right: 20px;">
-                                    <div class="item">
-                                        <div class="cast__card">
-                                            <img src="assets/img/Elenco/23.jpg" alt="">
-                                            <h5>Luizinho</h5>
-                                            <p>Atacante</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="owl-item" style="width: 178px; margin-right: 20px;">
-                                    <div class="item">
-                                        <div class="cast__card">
-                                            <img src="assets/img/Elenco/22.jpg" alt="">
-                                            <h5>Macário</h5>
-                                            <p>Atacante</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="owl-item" style="width: 178px; margin-right: 20px;">
-                                    <div class="item">
-                                        <div class="cast__card">
-                                            <img src="assets/img/Elenco/19.jpg" alt="">
-                                            <h5>Pedrinho</h5>
-                                            <p>Atacante</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="owl-item" style="width: 178px; margin-right: 20px;">
-                                    <div class="item">
-                                        <div class="cast__card">
-                                            <img src="assets/img/Elenco/13.jpg" alt="">
-                                            <h5>Souza</h5>
-                                            <p>Atacante</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="owl-item" style="width: 178px; margin-right: 20px;">
-                                    <div class="item">
-                                        <div class="cast__card">
-                                            <img src="assets/img/Elenco/12.jpg" alt="">
-                                            <h5>Thiaguinho</h5>
-                                            <p>Atacante</p>
-                                        </div>
-                                    </div>
-                                </div>
-
+                                <?php }?>
 
                             </div>
                         </div>
