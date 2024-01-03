@@ -42,6 +42,9 @@
                                     Anteriores</a></li>
                         </ul>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="elenco.php">Elenco</a>
+                    </li>
                 </ul>
                 <!-- Left links -->
             </div>
