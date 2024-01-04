@@ -36,6 +36,23 @@ class Elenco {
         }
     }
 
+    public function selectComissao()
+    {
+        require 'Admin/src/db/connect.php';
+
+
+        $sql = "SELECT * FROM elenco WHERE player_type > 5 ORDER BY player_type ASC";
+
+        $select = $conn->prepare($sql);
+
+        if ($select->execute()) {
+
+            $data = $select->fetchAll();
+
+            return $data;
+        }
+    }
+
     public function formatPosition($type)
     {
 

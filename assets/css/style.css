@@ -409,6 +409,12 @@ footer ul li a:hover {
     border-radius: 12px;
     background-size: cover;
     background-repeat: no-repeat;
+    transition: .2s;
+}
+
+.cardPubli:hover {
+    transition: .5s;
+    transform: scale(1.05);
 }
 
 .match__info {
@@ -449,6 +455,7 @@ footer ul li a:hover {
     color: #aaaaaa;
     font-weight: 600;
     text-align: justify;
+    font-size: 14px;
 }
 
 .accordion-button:not(.collapsed) {
@@ -515,6 +522,10 @@ footer ul li a:hover {
         left: 44%;
         top: 2px;
         width: 40px;
+    }
+
+    .section_title_pages {
+        background-position-y: 0px;
     }
 
 }

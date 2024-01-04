@@ -114,6 +114,7 @@
     <script>
         $('.owl-carousel').owlCarousel({
             loop: true,
+            rewind: true,
             margin: 10,
             responsiveClass: true,
             nav: false,

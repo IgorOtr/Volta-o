@@ -16,12 +16,9 @@
     $banners = $class_banner->getBanners();
     $players = $class_elenco->selectAllPlayers();
 
-    // echo '<pre>';
-    // var_dump($players);
-    // echo '</pre>';
-    // die();
-
     include 'includes/head.php';
+
+    $page = 'index';
 ?>
 
 <body>

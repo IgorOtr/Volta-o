@@ -33,11 +33,11 @@
                         FUTEBOL
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="<?php echo $elenco = ($page == 'index') ? '#elenco' : SITE_URL ?>">Elenco Proficional</a></li>
+                        <li><a class="dropdown-item" href="<?php echo $elenco = (@$page === 'index') ? '#elenco' : SITE_URL.'elenco.php'?>">Elenco Proficional</a></li>
                         <li>
                             <hr class="dropdown-divider" />
                         </li>
-                        <li><a class="dropdown-item" href="#">Comissão Técnica</a></li>
+                        <li><a class="dropdown-item" href="<?php echo SITE_URL.'comissao-tecnica.php'?>">Comissão Técnica</a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
