@@ -73,14 +73,14 @@
 
                             <div class="card-body">
                                 <div class="row p-2">
-                                    <div class="col-md-4 d-flex align-items-center justify-content-center">
+                                    <div class="col-4 d-flex align-items-center justify-content-center">
                                         <img src="assets/img/logo.png" alt="" width="45" srcset="">
                                     </div>
-                                    <div class="col-md-4 text-center d-flex align-items-center justify-content-center">
+                                    <div class="col-4 text-center d-flex align-items-center justify-content-center">
                                         <h1 style="font-size: 22px; font-weight: 600; color: #ffc800; margin: 0px;">X
                                         </h1>
                                     </div>
-                                    <div class="col-md-4 d-flex align-items-center justify-content-center">
+                                    <div class="col-4 d-flex align-items-center justify-content-center">
                                         <img src="Admin/public/img/times/<?php echo $next['adversary_img']?>" alt="" width="45" srcset="">
                                     </div>
                                 </div>
@@ -113,17 +113,17 @@
 
                                 <div class="card-body">
                                     <div class="row p-2">
-                                        <div class="col-md-4 text-center d-flex justify-content-center">
+                                        <div class="col-4 text-center d-flex justify-content-center">
                                             <div class="col-md-12 d-flex align-items-center justify-content-center">
                                                 <img src="assets/img/logo.png" alt="" width="45" srcset="">
                                             </div>
                                         </div>
-                                        <div class="col-md-4 text-center d-flex align-items-center justify-content-between">
+                                        <div class="col-4 text-center d-flex align-items-center justify-content-between">
                                             <h3 style="margin: 0px; color: #000000; font-size: 26px;"><?php echo $last['score_vr']?></h3>
                                             <h1 style="font-size: 22px; font-weight: 600; color: #ffc800; margin: 0px;">X</h1>
                                             <h3 style="margin: 0px; color: #000000; font-size: 26px;"><?php echo $last['score_adversary']?></h3>
                                         </div>
-                                        <div class="col-md-4 text-center d-flex justify-content-center">
+                                        <div class="col-4 text-center d-flex justify-content-center">
                                             <div class="col-md-12 d-flex align-items-center justify-content-center">
                                                 <img src="Admin/public/img/times/<?php echo $last['adversary_img']?>" alt="" width="45" srcset="">
                                             </div>

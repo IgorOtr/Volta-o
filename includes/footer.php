@@ -1,6 +1,6 @@
 
 <footer>
-        <div class="container pt-5 pb-5">
+        <div class="container p-3">
             <div class="row">
 
                 <div class="col-md-4">
@@ -72,16 +72,16 @@
                                 <div class="col-md-3"></div>
                                 <div class="col-md-6">
                                     <div class="row text-center">
-                                        <div class="col-md-3">
+                                        <div class="col-3">
                                             <a href=""><i class='bx bxl-instagram'></i></a>
                                         </div>
-                                        <div class="col-md-3">
+                                        <div class="col-3">
                                             <a href=""><i class='bx bxl-facebook-square'></i></a>
                                         </div>
-                                        <div class="col-md-3">
+                                        <div class="col-3">
                                             <a href=""><i class='bx bxl-twitter'></i></a>
                                         </div>
-                                        <div class="col-md-3">
+                                        <div class="col-3">
                                             <a href=""><i class='bx bxl-youtube'></i></a>
                                         </div>
                                     </div>
@@ -97,13 +97,13 @@
         <div class="container-fluid" style="background-color: #ffc800; padding-top: 6px; padding-bottom: 6px;">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-4" style="color: black; font-size: 12px; font-weight: 600;">
+                    <div class="col-md-4 text-center" style="color: black; font-size: 12px; font-weight: 600;">
                         Copyright 2023 © - Todos os Direitos Reservados
                     </div>
                     <div class="col-md-4">
     
                     </div>
-                    <div class="col-md-4 text-end" style="color: black; font-size: 12px; font-weight: 600;">
+                    <div class="col-md-4 text-center" style="color: black; font-size: 12px; font-weight: 600;">
                         Developed By Intentoo
                     </div>
                 </div>
@@ -137,6 +137,8 @@
             }
         })
     </script>
+
+    <script src="assets/js/app.js"></script>
 
 </body>
 

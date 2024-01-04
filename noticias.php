@@ -15,7 +15,7 @@ include 'includes/head.php';
         <div class="container section__title">
             <div class="row">
                 <div class="col-md-12">
-                    <h3>Notícias do Clube</h3>
+                    <h3 style="color: #000000;">Notícias do Clube</h3>
                 </div>
             </div>
         </div>

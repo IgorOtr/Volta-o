@@ -36,6 +36,24 @@ class Elenco {
         }
     }
 
+    public function selectPlayerToEdit($id)
+    {
+        require 'src/db/connect.php';
+
+
+        $sql = "SELECT * FROM elenco WHERE id = :id";
+
+        $select = $conn->prepare($sql);
+        $select->bindValue(':id', $id);
+
+        if ($select->execute()) {
+
+            $data = $select->fetchAll();
+
+            return $data;
+        }
+    }
+
     public function selectComissao()
     {
         require 'Admin/src/db/connect.php';
@@ -198,5 +216,94 @@ class Elenco {
 
                 header('location:'.SITE_URL.'Admin/elenco.php');
             }
-    }   
+    }
+
+    public function UpdatePlayerWithoutImage($id, $name, $position, $type, $updated_at)
+    {
+        require '../db/connect.php';
+
+        $sql = "UPDATE elenco SET player_name = :_name, player_position = :_position, player_type = :_type, updated_at = :updated_at WHERE id = :id"; 
+
+        $update = $conn->prepare($sql);
+        $update->bindValue(':_name', $name);
+        $update->bindValue(':_type', $type);
+        $update->bindValue(':_position', $position);
+        $update->bindValue(':updated_at', $updated_at);
+        $update->bindValue(':id', $id);
+
+        $success = $update->execute();
+
+            if ($success) {
+
+                $_SESSION['notice_added'] = '
+                <div class="row">
+                    <div class="col">
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            Alteração feita <strong>com sucesso!</strong>.
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    </div>
+                </div>';
+
+                header('location:'.SITE_URL.'Admin/elenco.php');
+            }
+
+    }
+
+    public function UpdatePlayerWithImage($id, $name, $img, $position, $type, $updated_at)
+    {
+        require '../db/connect.php';
+
+        $sql = "UPDATE elenco SET player_name = :_name, player_image = :_img, player_position = :_position, player_type = :_type, updated_at = :updated_at WHERE id = :id"; 
+
+        $update = $conn->prepare($sql);
+        $update->bindValue(':_name', $name);
+        $update->bindValue(':_img', $img);
+        $update->bindValue(':_position', $position);
+        $update->bindValue(':_type', $type);
+        $update->bindValue(':updated_at', $updated_at);
+        $update->bindValue(':id', $id);
+
+        $success = $update->execute();
+
+            if ($success) {
+
+                $_SESSION['notice_added'] = '
+                <div class="row">
+                    <div class="col">
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            Alteração feita <strong>com sucesso!</strong>.
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    </div>
+                </div>';
+
+                header('location:'.SITE_URL.'Admin/elenco.php');
+            }
+
+    }
+
+    public function DeleteMember($id)
+    {
+        require '../db/connect.php';
+
+        $sql = "DELETE FROM elenco WHERE id = $id";
+
+        $delete = $conn->prepare($sql);
+
+            if ($delete->execute()) {
+
+                $_SESSION['notice_added'] = '
+                <div class="row">
+                    <div class="col">
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            Membro Apagado <strong>com sucesso!</strong>.
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    </div>
+                </div>';
+
+                header('location:'.SITE_URL.'Admin/elenco.php');
+            }
+    }
 }

@@ -16,7 +16,7 @@
         </div>
     </section>
 
-    <section class="p-5 sec_history">
+    <section class="p-3 sec_history">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">

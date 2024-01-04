@@ -528,4 +528,29 @@ footer ul li a:hover {
         background-position-y: 0px;
     }
 
+    .notices__sec, .first__view__sec, .cast__sec, .sponsors__sec {
+        padding: 15px;
+    }
+
+    iframe {
+        width: 100%;
+    }
+
+    .carousel-caption p {
+        display: none;
+    }
+
+    .carousel-caption h5 {
+        font-size: 16px;
+        text-align: left;
+        margin-bottom: -30px;
+        position: absolute;
+        top: -6px;
+        left: -36px;
+    }
+
+    .d-none {
+        display: block !important;
+    }
+
 }
