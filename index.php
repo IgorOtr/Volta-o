@@ -25,6 +25,9 @@
     <?php include 'includes/nav.php'?>
 
     <section class="first__view__sec pt-5 pb-5">
+
+        <?php include 'includes/banner_quick.php'?>
+
         <div class="container">
             <div class="row">
                 <div class="col-md-8 mb-3">
@@ -81,13 +84,15 @@
                                         </h1>
                                     </div>
                                     <div class="col-4 d-flex align-items-center justify-content-center">
-                                        <img src="Admin/public/img/times/<?php echo $next['adversary_img']?>" alt="" width="45" srcset="">
+                                        <img src="Admin/public/img/times/<?php echo $next['adversary_img']?>" alt=""
+                                            width="45" srcset="">
                                     </div>
                                 </div>
                                 <div class="row pt-3 pb-3">
                                     <div class="col-md-2"></div>
                                     <div class="match__info col-md-8 text-center">
-                                        <i class='bx bx-calendar'></i> <?php echo $next['match_date']?> às <?php echo $next['match_time']?><br>
+                                        <i class='bx bx-calendar'></i> <?php echo $next['match_date']?> às
+                                        <?php echo $next['match_time']?><br>
                                         <i class='bx bx-map-pin'></i> <?php echo $next['match_local']?>
                                     </div>
                                     <div class="col-md-2"></div>
@@ -111,34 +116,39 @@
                             <?php foreach ($last_matches as $key => $last) {?>
 
 
-                                <div class="card-body">
-                                    <div class="row p-2">
-                                        <div class="col-4 text-center d-flex justify-content-center">
-                                            <div class="col-md-12 d-flex align-items-center justify-content-center">
-                                                <img src="assets/img/logo.png" alt="" width="45" srcset="">
-                                            </div>
-                                        </div>
-                                        <div class="col-4 text-center d-flex align-items-center justify-content-between">
-                                            <h3 style="margin: 0px; color: #000000; font-size: 26px;"><?php echo $last['score_vr']?></h3>
-                                            <h1 style="font-size: 22px; font-weight: 600; color: #ffc800; margin: 0px;">X</h1>
-                                            <h3 style="margin: 0px; color: #000000; font-size: 26px;"><?php echo $last['score_adversary']?></h3>
-                                        </div>
-                                        <div class="col-4 text-center d-flex justify-content-center">
-                                            <div class="col-md-12 d-flex align-items-center justify-content-center">
-                                                <img src="Admin/public/img/times/<?php echo $last['adversary_img']?>" alt="" width="45" srcset="">
-                                            </div>
-
+                            <div class="card-body">
+                                <div class="row p-2">
+                                    <div class="col-4 text-center d-flex justify-content-center">
+                                        <div class="col-md-12 d-flex align-items-center justify-content-center">
+                                            <img src="assets/img/logo.png" alt="" width="45" srcset="">
                                         </div>
                                     </div>
-                                    <div class="row pt-3 pb-3">
-                                        <div class="col-md-2"></div>
-                                        <div class="match__info col-md-8 text-center">
-                                            <i class='bx bx-calendar'></i> <?php echo $last['match_date']?> às <?php echo $last['match_time']?><br>
-                                            <i class='bx bx-map-pin'></i> <?php echo $last['match_local']?>
+                                    <div class="col-4 text-center d-flex align-items-center justify-content-between">
+                                        <h3 style="margin: 0px; color: #000000; font-size: 26px;">
+                                            <?php echo $last['score_vr']?></h3>
+                                        <h1 style="font-size: 22px; font-weight: 600; color: #ffc800; margin: 0px;">X
+                                        </h1>
+                                        <h3 style="margin: 0px; color: #000000; font-size: 26px;">
+                                            <?php echo $last['score_adversary']?></h3>
+                                    </div>
+                                    <div class="col-4 text-center d-flex justify-content-center">
+                                        <div class="col-md-12 d-flex align-items-center justify-content-center">
+                                            <img src="Admin/public/img/times/<?php echo $last['adversary_img']?>" alt=""
+                                                width="45" srcset="">
                                         </div>
-                                        <div class="col-md-2"></div>
+
                                     </div>
                                 </div>
+                                <div class="row pt-3 pb-3">
+                                    <div class="col-md-2"></div>
+                                    <div class="match__info col-md-8 text-center">
+                                        <i class='bx bx-calendar'></i> <?php echo $last['match_date']?> às
+                                        <?php echo $last['match_time']?><br>
+                                        <i class='bx bx-map-pin'></i> <?php echo $last['match_local']?>
+                                    </div>
+                                    <div class="col-md-2"></div>
+                                </div>
+                            </div>
 
 
                             <?php }?>
@@ -151,6 +161,7 @@
                 </div>
             </div>
         </div>
+
     </section>
 
     <section class="notices__sec pt-5 pb-5">
@@ -170,7 +181,7 @@
                     // var_dump($date);
                 ?>
 
-                <div class="col-md-4 mb-3">
+                <div class="col-md-4 mb-5">
                     <a href="<?php echo SITE_URL.'detalhes.php?id='.$notice['id']?>" class="notice__link">
                         <div class="notice__card">
                             <img src="Admin/public/img/notices/<?php echo $notice['notice_image']?>" alt="">
@@ -219,15 +230,16 @@
 
                                 <?php foreach ($players as $key => $player) {?>
 
-                                    <div class="owl-item" style="width: 178px; margin-right: 20px;">
-                                        <div class="item">
-                                            <div class="cast__card">
-                                                <img src="Admin/public/img/elenco/<?php echo $player['player_image']?>" alt="">
-                                                <h5><?php echo $player['player_name']?></h5>
-                                                <p><?php echo $player['player_position']?></p>
-                                            </div>
+                                <div class="owl-item" style="width: 178px; margin-right: 20px;">
+                                    <div class="item">
+                                        <div class="cast__card">
+                                            <img src="Admin/public/img/elenco/<?php echo $player['player_image']?>"
+                                                alt="">
+                                            <h5><?php echo $player['player_name']?></h5>
+                                            <p><?php echo $player['player_position']?></p>
                                         </div>
                                     </div>
+                                </div>
 
                                 <?php }?>
 
@@ -245,16 +257,20 @@
             <div class="row">
 
 
-            <?php foreach ($banners as $key => $banner) {
+                <?php foreach ($banners as $key => $banner) {
                 
                 $link = empty($banner['banner_link']) ? '' : 'href="'.$banner['banner_link'].'" target="_blank"';
             ?>
 
                 <div class="col-md-4 mb-3 mt-3">
-                    <a <?php echo $link?> ><div class="cardPubli" style="background-image: url(Admin/public/img/banners/<?php echo $banner['banner_image']?>);"></div></a>
+                    <a <?php echo $link?>>
+                        <div class="cardPubli"
+                            style="background-image: url(Admin/public/img/banners/<?php echo $banner['banner_image']?>);">
+                        </div>
+                    </a>
                 </div>
-                
-            <?php }?>
+
+                <?php }?>
 
 
             </div>

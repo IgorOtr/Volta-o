@@ -21,6 +21,9 @@
     </section>
 
     <section class="p-5 sec_history">
+
+    <?php include 'includes/banner_quick.php'?>
+
         <div class="container">
             <div class="row">
                 <div class="col-md-12">

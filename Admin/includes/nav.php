@@ -45,6 +45,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="elenco.php">Elenco</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="comments.php">Comentários</a>
+                    </li>
                 </ul>
                 <!-- Left links -->
             </div>

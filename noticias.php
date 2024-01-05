@@ -12,6 +12,9 @@ include 'includes/head.php';
 <?php include 'includes/nav.php'?>
 
     <section class="notices__sec__2">
+
+    <?php include 'includes/banner_quick.php'?>
+
         <div class="container section__title">
             <div class="row">
                 <div class="col-md-12">

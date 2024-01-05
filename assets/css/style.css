@@ -553,4 +553,8 @@ footer ul li a:hover {
         display: block !important;
     }
 
+    .banner__quick {
+        width: 100%;
+    }
+
 }

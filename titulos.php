@@ -17,6 +17,9 @@
     </section>
 
     <section class="p-3">
+
+    <?php include 'includes/banner_quick.php'?>
+    
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
