@@ -1,11 +1,15 @@
 <?php 
 require 'Admin/src/classes/Notice.php';
+require 'Admin/src/classes/Comment.php';
 
 $class = new Notice();
+$class_comment = new Comment();
 
 $id = isset($_GET['id']) ? $_GET['id'] : '';
 $details = $class->getNoticeDetails($id);
 $date = explode(" ", $details[0]['created_at']);
+
+$comments = $class_comment->GetCommentsByNoticeId($id);
 
 include 'includes/head.php'
 
@@ -28,7 +32,7 @@ include 'includes/head.php'
                     unset($_SESSION['notice_added']);
                 }
             ?>
-            
+
             <div class="row">
                 <div class="col-md-8 mb-3">
                     <div class="row">
@@ -93,6 +97,47 @@ include 'includes/head.php'
                                         id="exampleFormControlInput1">Enviar Comentário</button>
                                 </div>
                             </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container p-3">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 style="color: #000000;">Comentários Publicados</h3>
+                </div>
+            </div>
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-12">
+                    <div class="card-comment rounded shadow-0 border">
+                        <div class="card-body p-4">
+
+                        <?php foreach ($comments as $key => $comment) {
+                            
+                            $date = explode('-', $comment['created_at']);
+
+                            $created_at = substr($date[2],0,2).'/'.$date[1].'/'.$date[0];    
+                        ?>
+                            <div class="card-comment mb-4">
+                                <div class="card-body">
+                                    <p><?php echo $comment['user_comment']?></p>
+
+                                    <div class="d-flex justify-content-between">
+                                        <div class="d-flex flex-row align-items-center">
+                                            <img src="Admin/public/img/User_Icon.png"
+                                                alt="avatar" width="25" height="25" />
+                                            <p class="small mb-0 ms-2"><?php echo $comment['user_name']?></p>
+                                        </div>
+                                        <div class="d-flex flex-row align-items-center">
+                                            <p class="small text-muted mb-0"><i class='bx bx-calendar'></i> Publicado em: <?php echo $created_at?></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        <?php }?>
+
                         </div>
                     </div>
                 </div>

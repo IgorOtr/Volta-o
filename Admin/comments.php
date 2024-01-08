@@ -9,10 +9,11 @@
 
     $class = new Comment();
 
-    $pending = $class->getPending();
+    $pending = $class->GetPending();
+    $allComments = $class->GetAllComments();
 
     // echo '<pre>';
-    // var_dump($pending);
+    // var_dump($allComments);
     // echo '</pre>';
 
     // die();
@@ -59,11 +60,16 @@
                             <h4 class="mb-0" style="color: #ffc800;">Comentários Pendentes</h4>
                         </div>
 
-                        <?php foreach ($pending as $key => $pend) {
-                            
-                            $date = explode('-', $pend['created_at']);
+                        <?php 
+                            if (empty($pending)) {
+                                echo "<h3 style='color: #ffffff;'>Não há comentários à serem analisados =(</h3>";
+                            }else{
 
-                            $created_at = substr($date[2],0,2).'/'.$date[1].'/'.$date[0];
+                                foreach ($pending as $key => $pend) {
+                            
+                                    $date = explode('-', $pend['created_at']);
+        
+                                    $created_at = substr($date[2],0,2).'/'.$date[1].'/'.$date[0];
                         ?>
 
                         <div class="card mb-3">
@@ -84,8 +90,8 @@
                                         </div>
                                         <div class="d-flex justify-content-between align-items-center">
                                             <p class="small mb-0" style="color: #aaa;">
-                                                <a href="" class="btn btn-success">Aprovar</a>
-                                                <a href="" class="btn btn-danger">Reprovar</a>
+                                                <a href="<?php echo SITE_URL.'Admin/src/controllers/CommentController.php?action=change-status&id='.$pend['id'].'&sset=Aprovado'?>" class="btn btn-success">Aprovar</a>
+                                                <a href="<?php echo SITE_URL.'Admin/src/controllers/CommentController.php?action=change-status&id='.$pend['id'].'&sset=Reprovado'?>" class="btn btn-danger">Reprovar</a>
                                                 <a href="<?php echo SITE_URL.'detalhes.php?id='.$pend['id_notice'];?>" class="btn btn-primary">Notícia Referente</a>
                                             </p>
                                             <div class="d-flex flex-row">
@@ -97,7 +103,7 @@
                             </div>
                         </div>
 
-                        <?php }?>
+                        <?php }}?>
 
                     </div>
                 </div>
@@ -105,41 +111,53 @@
         </section>
 
         <section>
-            <div class="container my-5 py-5 text-dark">
+            <div class="container py-5 text-dark">
                 <div class="row d-flex justify-content-center">
                     <div class="col-md-12 col-lg-10 col-xl-8">
                         <div class="d-flex justify-content-between align-items-center mb-4">
                             <h4 class="mb-0" style="color: #ffc800;">Todos os comentários</h4>
                         </div>
 
-                        <div class="card mb-3">
-                            <div class="card-body">
-                                <div class="d-flex flex-start">
-                                    <img class="rounded-circle shadow-1-strong me-3"
-                                        src="public/img/User_Icon.png" alt="avatar"
-                                        width="40" height="40" />
-                                    <div class="w-100">
-                                        <div class="d-flex justify-content-between align-items-center mb-3">
-                                            <h6 class="text-primary fw-bold mb-0">
-                                                lara_stewart
-                                                <p class="text-dark text-justify">
-                                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus dignissimos omnis sed, est magnam enim expedita aut! Ipsam expedita numquam magnam, quod explicabo voluptatem dolore omnis nemo molestias itaque aliquid?
+
+                        <?php foreach ($allComments as $key => $comments) {
+                            
+                            $date = explode('-', $comments['created_at']);
+
+                            $created_at = substr($date[2],0,2).'/'.$date[1].'/'.$date[0];
+                        ?>
+
+                            <div class="card mb-3">
+                                <div class="card-body">
+                                    <div class="d-flex flex-start">
+                                        <img class="rounded-circle shadow-1-strong me-3"
+                                            src="public/img/User_Icon.png" alt="avatar"
+                                            width="40" height="40" />
+                                        <div class="w-100">
+                                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                                <h6 class="text-primary fw-bold mb-0">
+                                                    <?php echo $comments['user_name']?>
+                                                    <p class="text-dark text-justify">
+                                                    <?php echo $comments['user_comment']?>
+                                                    </p>
+                                                </h6>
+                                                <p style="position: absolute; right: 8px; top: 8px;" class="mb-0"><i class='bx bx-calendar'></i> <?php echo $created_at?></p>
+                                            </div>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <p class="small mb-0" style="color: #aaa;">
+                                                    <a href="<?php echo SITE_URL.'detalhes.php?id='.$comments['id_notice'];?>" class="btn btn-primary">Notícia Referente</a>
                                                 </p>
-                                            </h6>
-                                            <p style="position: absolute; right: 8px; top: 8px;" class="mb-0"><i class='bx bx-calendar'></i> 05/01/2024</p>
-                                        </div>
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <p class="small mb-0" style="color: #aaa;">
-                                                <a href="" class="btn btn-primary">Notícia Referente</a>
-                                            </p>
-                                            <div class="d-flex flex-row">
-                                                <i data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Pendente" style="font-size: 20px;" class='bx bx-time-five' ></i>
+                                                <div class="d-flex flex-row">
+                                                    <?php echo $status_icon = $class->FormatCommentStatus($comments
+                                                    ['comment_status'])?>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+
+                        <?php }?>
+
                     </div>
                 </div>
             </div>
