@@ -484,6 +484,88 @@ footer ul li a:hover {
     padding: 18px;
 }
 
+.background__banner {
+    background: linear-gradient(#ffffff00, #000000);
+}
+
+.file_link {
+    text-decoration: none;
+}
+
+.card_file {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid #c9c9c9;
+    border-radius: 8px;
+    transition: .3s;
+    text-align: center;
+    height: 200px;
+    overflow: hidden;
+}
+
+.card_file:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 10px #00000013;
+    transition: .3s;
+}
+
+.card_file .bx {
+    color: #ffc800;
+    font-size: 38px;
+    margin-bottom: 8px;
+    text-decoration: none;
+}
+
+.card_file h3 {
+    font-size: 20px;
+    color: #000000;
+}
+
+.btn-file {
+    border: 1px solid #ffffff00;
+    background-color: #d4d4d4;
+    text-decoration: none;
+    color: #0e0e0e;
+    font-weight: 600;
+}
+
+.btn-file-disabled {
+    border: 1px solid #ffffff00;
+    background-color: #ededed;
+    text-decoration: none;
+    color: #bababa;
+    font-weight: 600;
+}
+
+.btn-file-disabled:hover {
+    border: 1px solid #ffffff00;
+    background-color: #ededed;
+    text-decoration: none;
+    color: #bababa;
+    font-weight: 600;
+}
+
+.btn-file:hover {
+    border: 1px solid #ffffff00;
+    background-color: #ffc800;
+}
+
+.btn:disabled{
+    background-color: #6b6b6b;
+}
+
+:not(.btn-check)+.btn:active {
+    color: #0e0e0e57;
+    background-color: #ededed;
+    border: 1px solid #ffffff00;
+}
+
 @media only screen and (max-width: 1440px) {
 
     .cardPubli {

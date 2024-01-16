@@ -28,13 +28,13 @@
                                     <a href="<?php echo SITE_URL?>">Home</a>
                                 </li>
                                 <li>
-                                    <a href="">Futebol</a>
+                                    <a href="#">Futebol</a>
                                 </li>
                                 <li>
                                     <a href="#">O Clube</a>
                                 </li>
                                 <li>
-                                    <a href="#">Transparência</a>
+                                    <a href="<?php echo SITE_URL.'transparencia.php'?>">Transparência</a>
                                 </li>
                                 <li>
                                     <a href="https://www.eusouvoltaco.com.br/">Seja Sócio</a>

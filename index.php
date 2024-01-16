@@ -39,8 +39,8 @@
 
                             <div class="carousel-item active">
                                 <a href="<?php echo SITE_URL.'detalhes.php?id='.$detail['id']?>">
-                                    <div
-                                        style="padding: 238px; height: 100%; width: 100%; background-image: url(Admin/public/img/notices/<?php echo $detail['notice_image']?>); background-size: cover; background-repeat: no-repeat;">
+                                    <div style="padding: 238px; height: 100%; width: 100%; background-image: url(Admin/public/img/notices/<?php echo $detail['notice_image']?>); background-size: cover; background-repeat: no-repeat;">
+                                        <div class="background__banner" style="height: 100%; width: 100%; position: absolute; top: 0px; left: 0px;"></div>
                                     </div>
                                     <div class="carousel-caption d-none d-md-block">
                                         <h5><?php echo $detail['notice_title']?></h5>

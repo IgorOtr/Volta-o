@@ -66,7 +66,7 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">TRANSPARÊNCIA</a>
+                    <a class="nav-link active" aria-current="page" href="<?php echo SITE_URL.'transparencia.php'?>">TRANSPARÊNCIA</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="https://www.eusouvoltaco.com.br/" target="_blank" >SEJA SÓCIO</a>
