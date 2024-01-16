@@ -25,25 +25,25 @@
         
                             <ul>
                                 <li>
-                                    <a href="">Home</a>
+                                    <a href="<?php echo SITE_URL?>">Home</a>
                                 </li>
                                 <li>
                                     <a href="">Futebol</a>
                                 </li>
                                 <li>
-                                    <a href="">O Clube</a>
+                                    <a href="#">O Clube</a>
                                 </li>
                                 <li>
-                                    <a href="">Transparência</a>
+                                    <a href="#">Transparência</a>
                                 </li>
                                 <li>
-                                    <a href="">Seja Sócio</a>
+                                    <a href="https://www.eusouvoltaco.com.br/">Seja Sócio</a>
                                 </li>
                                 <li>
-                                    <a href="">Voltço Tv</a>
+                                    <a href="https://www.youtube.com/@voltacotv76">Voltço Tv</a>
                                 </li>
                                 <li>
-                                    <a href="">Contatos</a>
+                                    <a href="contact.php">Contatos</a>
                                 </li>
                             </ul>
                         </div>
@@ -73,16 +73,16 @@
                                 <div class="col-md-6">
                                     <div class="row text-center">
                                         <div class="col-3">
-                                            <a href=""><i class='bx bxl-instagram'></i></a>
+                                            <a href="https://www.instagram.com/voltacofc/" target="_blank"><i class='bx bxl-instagram'></i></a>
                                         </div>
                                         <div class="col-3">
-                                            <a href=""><i class='bx bxl-facebook-square'></i></a>
+                                            <a href="https://www.facebook.com/VoltacoFutebolClube" target="_blank"><i class='bx bxl-facebook-square'></i></a>
                                         </div>
                                         <div class="col-3">
-                                            <a href=""><i class='bx bxl-twitter'></i></a>
+                                            <a href="https://twitter.com/VoltacoFC" target="_blank"><i class='bx bxl-twitter'></i></a>
                                         </div>
                                         <div class="col-3">
-                                            <a href=""><i class='bx bxl-youtube'></i></a>
+                                            <a href="https://www.youtube.com/@voltacotv76" target="_blank"><i class='bx bxl-youtube'></i></a>
                                         </div>
                                     </div>
                                 </div>

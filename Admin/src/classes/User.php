@@ -27,7 +27,7 @@ class User {
         $_SESSION["nome"] = $auth_result["user_name"];
         $_SESSION["email"] = $auth_result["user_email"];
 
-        return header('location: http://localhost/Voltaco/Admin');
+        return header('location: '.SITE_URL.'Admin');
 
        } else {
 
@@ -38,7 +38,7 @@ class User {
         Email e/ou senha inválidos.
         </div>';
 
-        header('location: http://localhost/Voltaco/Admin/login.php');
+        header('location: '.SITE_URL.'Admin/login.php');
         
        }
     }

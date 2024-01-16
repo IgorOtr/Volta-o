@@ -62,7 +62,7 @@
                         <li>
                             <hr class="dropdown-divider" />
                         </li>
-                        <li><a class="dropdown-item" href="#">Diretoria e Conselho</a></li>
+                        <li><a class="dropdown-item" href="diretoria-e-conselho.php">Diretoria e Conselho</a></li>
                     </ul>
                 </li>
                 <li class="nav-item">
@@ -75,7 +75,7 @@
                     <a class="nav-link active" aria-current="page" href="https://www.youtube.com/@voltacotv76" target="_blank" >VOLTAÇO TV</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">CONTATOS</a>
+                    <a class="nav-link active" aria-current="page" href="contact.php">CONTATOS</a>
                 </li>
             </ul>
         </div>

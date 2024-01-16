@@ -21,7 +21,7 @@ if (isset($_POST['add_notice'])) {
 
         if ($uploadImageToFolder[0] === true) {
             
-            $insertNotice = $class->insertNotice($title, $content, $uploadImageToFolder[1], $category, $status, $created_at, $updated_at);
+            $insertNotice = $class->insertNotice($title, $content, $uploadImageToFolder[1], $category, $status, $_SESSION['nome'], $created_at, $updated_at);
         }
 }
 

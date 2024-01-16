@@ -33,13 +33,14 @@ include 'includes/head.php';
                 <div class="col-md-4 mb-3">
                     <a href="<?php echo SITE_URL.'detalhes.php?id='.$notice['id']?>" class="notice__link">
                         <div class="notice__card">
-                            <img src="Admin/public/img/notices/<?php echo $notice['notice_image']?>" alt="">
+                            <div style="height: 225px; width: 100%; background-image: url(Admin/public/img/notices/<?php echo $notice['notice_image']?>); background-size: cover; background-repeat: no-repeat;">
+                            </div>
 
                             <div class="card-date">
                                 Publicado em: <?php echo $date[0]?>
                             </div>
                             <div class="notice-title">
-                                <?php echo $notice['notice_title']?>
+                                <?php echo substr(strip_tags($notice['notice_title']), 0, 40)."..."?>
                             </div>
                             <div class="notice-content">
                                 <?php echo substr(strip_tags($notice['notice_content']), 0, 140)."..."?>

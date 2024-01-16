@@ -61,7 +61,25 @@ class Notice{
     {
         require 'Admin/src/db/connect.php';
 
-        $sql = "SELECT * FROM notices WHERE notice_status = :ativo";
+        $sql = "SELECT * FROM notices WHERE notice_status = :ativo ORDER BY id DESC";
+        
+        $select = $conn->prepare($sql);
+        $select->bindValue(':ativo', 'Ativo');
+
+        $success = $select->execute();
+
+            if ($success) {
+
+                $data = $select->fetchAll();
+                return $data;
+            }
+    }
+
+    public function getNoticesToIndex()
+    {
+        require 'Admin/src/db/connect.php';
+
+        $sql = "SELECT * FROM notices WHERE notice_status = :ativo ORDER BY id DESC LIMIT 6";
         
         $select = $conn->prepare($sql);
         $select->bindValue(':ativo', 'Ativo');
@@ -83,6 +101,60 @@ class Notice{
         $select = $conn->prepare($sql);
         
             if ($select->execute()) {
+
+                $data = $select->fetchAll();
+                return $data;
+            }
+    }
+
+    public function getAllLastNotices($id)
+    {
+        require 'Admin/src/db/connect.php';   
+        
+        $sql = "SELECT * FROM notices WHERE id != :id ORDER BY id DESC LIMIT 5";
+
+        $select = $conn->prepare($sql);
+        $select->bindValue(':id', $id);
+
+        $success = $select->execute();
+
+            if ($success) {
+
+                $data = $select->fetchAll();
+                return $data;
+            }
+    }
+
+    public function getNextNotice($id) 
+    {
+        require 'Admin/src/db/connect.php';   
+        
+        $sql = "SELECT * FROM notices WHERE id = :id";
+
+        $select = $conn->prepare($sql);
+        $select->bindValue(':id', $id + 1);
+
+        $success = $select->execute();
+
+            if ($success) {
+
+                $data = $select->fetchAll();
+                return $data;
+            }
+    }
+
+    public function getLastNotice($id) 
+    {
+        require 'Admin/src/db/connect.php';   
+        
+        $sql = "SELECT * FROM notices WHERE id = :id";
+
+        $select = $conn->prepare($sql);
+        $select->bindValue(':id', $id - 1);
+
+        $success = $select->execute();
+
+            if ($success) {
 
                 $data = $select->fetchAll();
                 return $data;
@@ -132,7 +204,7 @@ class Notice{
     } 
 
 
-    public function insertNotice($title, $content, $img, $category, $status, $created_at, $updated_at)
+    public function insertNotice($title, $content, $img, $category, $status, $author, $created_at, $updated_at)
     {
         require '../db/connect.php';
 
@@ -142,6 +214,7 @@ class Notice{
         notice_image, 
         notice_category,
         notice_status,
+        notice_author,
         created_at,
         updated_at)
         VALUES
@@ -150,6 +223,7 @@ class Notice{
         :_image,
         :_category,
         :_status,
+        :_author,
         :created_at,
         :updated_at)";
 
@@ -159,6 +233,7 @@ class Notice{
         $insert->bindValue(':_image', $img);
         $insert->bindValue(':_category', $category);
         $insert->bindValue(':_status', $status);
+        $insert->bindValue(':_author', $author);
         $insert->bindValue(':created_at', $created_at);
         $insert->bindValue(':updated_at', $updated_at);
 

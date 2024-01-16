@@ -109,7 +109,7 @@ class Comment {
                     <div class="row">
                         <div class="col">
                             <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                O comentário foi adicionado <strong>com sucesso!</strong>.
+                                O seu comentário está sendo analisado <strong>com sucesso!</strong>.
                             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                             </div>
                         </div>

@@ -64,10 +64,11 @@ $class = new Notice();
                         <div class="col-md-4 mb-3">
                             <div class="card" style="">
                                 <?php echo $destaque = ($notice['notice_category'] === 'Destaque') ? '<span class="badge bg-danger" style="position: absolute; left: 10px; top: 10px;">Destaque</span>' : ''?>
-                                <img src="<?php echo SITE_URL.'/Admin/public/img/notices/'.$notice['notice_image']?>"
-                                    class="card-img-top" alt="...">
+                                <!-- <img src="<?php echo SITE_URL.'/Admin/public/img/notices/'.$notice['notice_image']?>"
+                                    class="card-img-top" alt="..."> -->
+                                    <div style="padding: 140px; height: 100%; width: 100%; background-image: url(<?php echo SITE_URL.'/Admin/public/img/notices/'.$notice['notice_image']?>); background-size: cover; background-repeat: no-repeat;"></div>
                                 <div class="card-body">
-                                    <h5 class="card-title text-justify"><?php echo substr($notice['notice_title'],0,58).'...'?>
+                                    <h5 class="card-title text-justify"><?php echo substr($notice['notice_title'],0,40).'...'?>
                                     </h5>
                                     <p class="card-text text-justify">
                                         <?php echo substr(strip_tags($notice['notice_content']),0,120).'...'?>
