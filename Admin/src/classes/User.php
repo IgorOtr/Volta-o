@@ -31,9 +31,6 @@ class User {
 
        } else {
 
-        echo "lalala";
-        die();
-
         $_SESSION['error-login'] = '<div class="alert alert-danger" role="alert">
         Email e/ou senha inválidos.
         </div>';

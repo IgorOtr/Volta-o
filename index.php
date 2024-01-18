@@ -39,8 +39,8 @@
 
                             <div class="carousel-item active">
                                 <a href="<?php echo SITE_URL.'detalhes.php?id='.$detail['id']?>">
-                                    <div style="padding: 238px; height: 100%; width: 100%; background-image: url(Admin/public/img/notices/<?php echo $detail['notice_image']?>); background-size: cover; background-repeat: no-repeat;">
-                                        <div class="background__banner" style="height: 100%; width: 100%; position: absolute; top: 0px; left: 0px;"></div>
+                                    <div class="banner_slide" style="background-image: url(Admin/public/img/notices/<?php echo $detail['notice_image']?>);">
+                                        <div class="background__banner"></div>
                                     </div>
                                     <div class="carousel-caption text-start d-none d-md-block">
                                         <h5><?php echo $detail['notice_title']?></h5>
@@ -329,6 +329,30 @@
                                     </div>
                                 </div>
 
+                                <div class="owl-item" style="width: 178px; margin-right: 20px;">
+                                    <div class="item">
+                                        <div class="cast__card__sponsors">
+                                            <img class="sponsors_logo" style="width: 55% !important;" src="assets/img/Sponsors/Volkswagen_logo.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="owl-item" style="width: 178px; margin-right: 20px;">
+                                    <div class="item">
+                                        <div class="cast__card__sponsors">
+                                            <img class="sponsors_logo" src="assets/img/Sponsors/Betspeed.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="owl-item" style="width: 178px; margin-right: 20px;">
+                                    <div class="item">
+                                        <div class="cast__card__sponsors">
+                                            <img class="sponsors_logo" src="assets/img/Sponsors/CSN.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+
 
                             </div>
                         </div>
@@ -528,6 +552,14 @@
                                     <div class="item">
                                         <div class="cast__card__sponsors">
                                             <img class="sponsors_logo" src="assets/img/Sponsors/Global-Protecao-Veicular-2.png.webp" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                              
+                                <div class="owl-item" style="width: 178px; margin-right: 20px;">
+                                    <div class="item">
+                                        <div class="cast__card__sponsors">
+                                            <img class="sponsors_logo" src="assets/img/Sponsors/Idealize.png" alt="">
                                         </div>
                                     </div>
                                 </div>

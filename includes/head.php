@@ -26,5 +26,5 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <link rel="stylesheet" href="assets/css/style.css" />
-    <title>Voltaço - O Melho do Sul do Estado</title>
+    <title>Voltaço - O Maior do Sul do Estado</title>
 </head>

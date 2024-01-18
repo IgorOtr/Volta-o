@@ -77,24 +77,31 @@ include 'includes/head.php'
                             </div>
                         </div>
 
-                        <?php foreach ($all_last_notice as $key => $last) {?>
-
-                        <div class="row g-0">
-                            <div class="col-md-4 d-flex align-items-center">
-                                <img src="<?php echo SITE_URL.'Admin/public/img/notices/'.$last['notice_image']?>" alt="Trendy Pants and Shoes" class="img-fluid rounded-start">
-                            </div>
-                            <div class="col-md-8 d-flex align-items-center">
-                                <div class="card-body">
-                                    <h5 style="font-size: 16px;"><?php echo substr($last['notice_title'], 0, 20).'...'?></h5>
-                                    <p class="card-text" style="font-size: 12px;">
-                                        <?php echo substr(strip_tags($last['notice_content']), 0, 120).'...'?>
-                                    </p>
-                                    <p class="card-text">
-                                        <small class="text-muted">Publicado em: 12/01/2024</small>
-                                    </p>
+                        <?php foreach ($all_last_notice as $key => $last) {
+                            
+                            $date = explode(" ", $last['created_at']);
+                        ?>
+                        <a href="<?php echo SITE_URL.'detalhes.php?id='.$last['id']?>" class="notice__link">
+                            <div class="row g-0">
+                                <div class="col-md-4 d-flex align-items-center">
+                                    <div class="last_notice_image" style="background-image: url(<?php echo SITE_URL.'Admin/public/img/notices/'.$last['notice_image']?>);">
+                                       
+                                    </div>
+                                </div>
+                                <div class="col-md-8 d-flex align-items-center">
+                                    <div class="card-body">
+                                        <h5 style="font-size: 16px; color: #000000;">
+                                            <?php echo substr($last['notice_title'], 0, 20).'...'?></h5>
+                                        <p class="card-text" style="font-size: 12px; color: #414141;">
+                                            <?php echo substr(strip_tags($last['notice_content']), 0, 120).'...'?>
+                                        </p>
+                                        <p class="card-text">
+                                            <small class="text-muted">Publicado em: <?php echo $date[0]?></small>
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        </a>
                         <hr>
 
                         <?php }?>

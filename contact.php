@@ -21,6 +21,16 @@
         <?php include 'includes/banner_quick.php'?>
 
         <div class="container mb-5 mt-5">
+
+
+            <?php 
+                if (isset($_SESSION['action_success'])) { 
+
+                    echo $_SESSION['action_success'];
+                    unset($_SESSION['action_success']);
+                }
+            ?>
+
             <div class="row">
                 <div class="col-md-8">
                     <!--Section: Contact v.2-->
@@ -28,7 +38,8 @@
                         <div class="row">
                             <!--Grid column-->
                             <div class="col-md-9 mb-md-0 mb-5">
-                                <form id="contact-form" name="contact-form" action="Admin/src/mail.php" method="POST">
+                                <form id="contact-form" name="contact-form" action="Admin/src/send-email.php"
+                                    method="POST">
 
                                     <!--Grid row-->
                                     <div class="row">
@@ -38,7 +49,7 @@
                                             <div class="md-form mb-3">
                                                 <label for="name" class="">Com quem deseja falar?</label>
                                                 <select class="form-select form-control"
-                                                    aria-label="Default select example">
+                                                    aria-label="Default select example" name="sector" required>
                                                     <option selected>Selecione</option>
                                                     <option value="1">Administação</option>
                                                     <option value="2">Acessoria de Imprenssa</option>
@@ -54,8 +65,8 @@
                                         <div class="col-md-6">
                                             <div class="md-form mb-3">
                                                 <label for="email" class="">Nome:</label>
-                                                <input type="text" id="email" name="email" class="form-control"
-                                                    placeholder="Digite seu nome completo:">
+                                                <input type="text" id="email" name="name" class="form-control"
+                                                    placeholder="Digite seu nome completo:" required>
                                             </div>
                                         </div>
                                         <!--Grid column-->
@@ -69,7 +80,7 @@
                                             <div class="md-form mb-3">
                                                 <label for="email" class="">Email:</label>
                                                 <input type="email" id="email" name="email" class="form-control"
-                                                    placeholder="Digite seu melhor e-mail:">
+                                                    placeholder="Digite seu melhor e-mail:" required>
                                             </div>
                                         </div>
                                     </div>
@@ -78,8 +89,8 @@
                                         <div class="col-md-12">
                                             <div class="md-form mb-3">
                                                 <label for="email" class="">Telefone:</label>
-                                                <input type="text" id="email" name="email" class="form-control"
-                                                    placeholder="Digite o seu telefone com DDD:">
+                                                <input type="text" id="email" name="phone" class="form-control"
+                                                    placeholder="Digite o seu telefone com DDD:" required>
                                             </div>
                                         </div>
                                     </div>
@@ -94,7 +105,7 @@
                                             <div class="md-form mb-3">
                                                 <label for="message">Your message</label>
                                                 <textarea type="text" id="message" name="message" rows="2"
-                                                    class="form-control md-textarea"></textarea>
+                                                    class="form-control md-textarea" required></textarea>
                                             </div>
 
                                         </div>
@@ -102,7 +113,8 @@
                                     <!--Grid row-->
 
                                     <div class="text-center text-md-left">
-                                        <button type="submit" class="btn btn-warning w-100">Enviar Mensagem</button>
+                                        <button type="submit" name="send-email" class="btn btn-warning w-100">Enviar
+                                            Mensagem</button>
                                     </div>
 
                                 </form>
@@ -137,7 +149,7 @@
                                 <div class="accordion-body d-flex flex-column">
                                     <strong class="mb-3">Horário de Atendimento</strong>
                                     <p>
-                                        Segunda à sexta-feira, das 9h às 18h 
+                                        Segunda à sexta-feira, das 9h às 18h
                                     </p>
                                     <strong>Localização</strong>
                                     <p>
@@ -158,7 +170,7 @@
                                 <div class="accordion-body d-flex flex-column">
                                     <strong class="mb-3">Horário de Atendimento</strong>
                                     <p>
-                                    Segunda à sexta-feira, das 9h às 16h 
+                                        Segunda à sexta-feira, das 9h às 16h
                                     </p>
                                 </div>
                             </div>
@@ -175,7 +187,7 @@
                                 <div class="accordion-body d-flex flex-column">
                                     <strong class="mb-3">Horário de Atendimento</strong>
                                     <p>
-                                    Segunda à sexta-feira, das 9h às 16h 
+                                        Segunda à sexta-feira, das 9h às 16h
                                     </p>
                                 </div>
                             </div>
@@ -193,7 +205,7 @@
                                 <div class="accordion-body d-flex flex-column">
                                     <strong class="mb-3">Horário de Atendimento</strong>
                                     <p>
-                                    Segunda à sexta-feira, das 9h às 16h 
+                                        Segunda à sexta-feira, das 9h às 16h
                                     </p>
                                 </div>
                             </div>
