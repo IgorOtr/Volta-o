@@ -31,7 +31,7 @@
                                     <a href="#">Futebol</a>
                                 </li>
                                 <li>
-                                    <a href="#">O Clube</a>
+                                    <a href="<?php echo SITE_URL.'historia.php'?>">O Clube</a>
                                 </li>
                                 <li>
                                     <a href="<?php echo SITE_URL.'transparencia.php'?>">Transparência</a>
@@ -53,10 +53,10 @@
         
                             <ul>
                                 <li>
-                                    <a href="">POLÍTICA DE PRIVACIDADE</a>
+                                    <a href="<?php echo SITE_URL.'politics.php'?>">POLÍTICA DE PRIVACIDADE</a>
                                 </li>
                                 <li>
-                                    <a href="">TERMOS DE USO</a>
+                                    <a href="<?php echo SITE_URL.'terms.php'?>">TERMOS DE USO</a>
                                 </li>
                                 <li>
                                     <a href="">TOPO</a>

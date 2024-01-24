@@ -586,6 +586,13 @@ footer ul li a:hover {
     border-radius: 5px;
 }
 
+.terms_card {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 20px #0000002f;
+}
+
 @media only screen and (max-width: 1440px) {
 
     .cardPubli {
