@@ -59,7 +59,7 @@
                                     <a href="<?php echo SITE_URL.'terms.php'?>">TERMOS DE USO</a>
                                 </li>
                                 <li>
-                                    <a href="">TOPO</a>
+                                    <a href="#">TOPO</a>
                                 </li>
                             </ul>
                         </div>

@@ -20,11 +20,11 @@ class Matches{
             }
     }
 
-    public function addNextMatch($name, $img, $date, $time, $local, $created_at)
+    public function addNextMatch($name, $img, $date, $time, $local, $boss, $created_at)
     {
         require '../db/connect.php';
 
-        $sql = "INSERT INTO next_matches (adversary, adversary_img, match_date, match_time, match_local, created_at) VALUES (:_name, :_img, :_date, :_time, :_local, :_created_at)";
+        $sql = "INSERT INTO next_matches (adversary, adversary_img, match_date, match_time, match_local, match_boss, created_at) VALUES (:_name, :_img, :_date, :_time, :_local, :_match_boss, :_created_at)";
 
         $insert = $conn->prepare($sql);
 
@@ -33,6 +33,7 @@ class Matches{
         $insert->bindValue(':_date', $date);
         $insert->bindValue(':_time', $time);
         $insert->bindValue(':_local', $local);
+        $insert->bindValue(':_match_boss', $boss);
         $insert->bindValue(':_created_at', $created_at);
 
         $success = $insert->execute();

@@ -76,19 +76,48 @@
 
 
                             <div class="card-body">
-                                <div class="row p-2">
-                                    <div class="col-4 d-flex align-items-center justify-content-center">
-                                        <img src="assets/img/logo.png" alt="" width="45" srcset="">
+
+                                <?php if ($next['match_boss'] == 'Adversary') {?>
+
+                                    <div class="row p-2">
+                                        
+                                        <div class="col-4 d-flex align-items-center justify-content-center">
+                                            <img src="Admin/public/img/times/<?php echo $next['adversary_img']?>" alt=""
+                                                width="45" srcset="">
+                                        </div>
+                                        <div class="col-4 text-center d-flex align-items-center justify-content-center">
+                                            <h1 style="font-size: 22px; font-weight: 600; color: #ffc800; margin: 0px;">X
+                                            </h1>
+                                        </div>
+                                        <div class="col-4 d-flex align-items-center justify-content-center">
+                                            <img src="assets/img/logo.png" alt="" width="45" srcset="">
+                                        </div>
+                                        
                                     </div>
-                                    <div class="col-4 text-center d-flex align-items-center justify-content-center">
-                                        <h1 style="font-size: 22px; font-weight: 600; color: #ffc800; margin: 0px;">X
-                                        </h1>
+
+                                <?php } elseif($next['match_boss'] == 'Voltaco') {?>
+
+                                    <div class="row p-2">
+                                        
+                                        <div class="col-4 d-flex align-items-center justify-content-center">
+                                            <img src="assets/img/logo.png" alt="" width="45" srcset="">
+                                        </div>
+                                        <div class="col-4 text-center d-flex align-items-center justify-content-center">
+                                            <h1 style="font-size: 22px; font-weight: 600; color: #ffc800; margin: 0px;">X
+                                            </h1>
+                                        </div>
+                                        <div class="col-4 d-flex align-items-center justify-content-center">
+                                            <img src="assets/img/logo.png" alt="" width="45" srcset="">
+                                        </div>
+                                        <div class="col-4 d-flex align-items-center justify-content-center">
+                                            <img src="Admin/public/img/times/<?php echo $next['adversary_img']?>" alt=""
+                                                width="45" srcset="">
+                                        </div>
+                                        
                                     </div>
-                                    <div class="col-4 d-flex align-items-center justify-content-center">
-                                        <img src="Admin/public/img/times/<?php echo $next['adversary_img']?>" alt=""
-                                            width="45" srcset="">
-                                    </div>
-                                </div>
+
+                                <?php } ?>
+
                                 <div class="row pt-3 pb-3">
                                     <div class="col-md-2"></div>
                                     <div class="match__info col-md-8 text-center">

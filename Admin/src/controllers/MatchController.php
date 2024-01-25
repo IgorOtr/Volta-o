@@ -18,11 +18,13 @@ if (isset($_POST['add_next_match'])) {
     $created_at = date('d/m/Y h:i:s');
     $adversary_img = $_FILES['adversary_img'];
 
+    $match_boss = $_POST['match_boss'];
+
     $uploadImageToFolder = $class->uploadImagetoFolder($adversary_img);
 
         if ($uploadImageToFolder[0] === true) {
                     
-            $insert = $class->addNextMatch($adversary, $uploadImageToFolder[1], $date, $match_time, $match_local, $created_at);
+            $insert = $class->addNextMatch($adversary, $uploadImageToFolder[1], $date, $match_time, $match_local, $match_boss, $created_at);
         }
 }
 
