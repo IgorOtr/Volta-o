@@ -107,9 +107,6 @@
                                             </h1>
                                         </div>
                                         <div class="col-4 d-flex align-items-center justify-content-center">
-                                            <img src="assets/img/logo.png" alt="" width="45" srcset="">
-                                        </div>
-                                        <div class="col-4 d-flex align-items-center justify-content-center">
                                             <img src="Admin/public/img/times/<?php echo $next['adversary_img']?>" alt=""
                                                 width="45" srcset="">
                                         </div>

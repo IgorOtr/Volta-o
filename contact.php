@@ -1,4 +1,6 @@
 <?php
+session_start();
+
     require 'Admin/src/db/connect.php';
     include 'includes/head.php';
 ?>
