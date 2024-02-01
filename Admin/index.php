@@ -20,7 +20,7 @@
                 <div class="col-md-2"></div>
                 <div class="col-md-8 text-center">
                     <p class="page__wellcome">
-                        Olá, <?php echo $_SESSION["nome"]?>!<br>Bem vindo(a) á plataforma de gerenciamento de conteúdo do site.<br>
+                        Olá, <?php echo $_SESSION["voltaco_nome"]?>!<br>Bem vindo(a) á plataforma de gerenciamento de conteúdo do site.<br>
                         Aqui estão alguns recursos que você encontrará no nosso sistema de gerenciamento de
                         conteúdo:<br><br>
                     </p>

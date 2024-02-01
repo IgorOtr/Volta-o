@@ -43,7 +43,7 @@ class Notice{
     {
         require 'Admin/src/db/connect.php';
 
-        $sql = "SELECT * FROM notices WHERE notice_category = :destaque";
+        $sql = "SELECT * FROM notices WHERE notice_category = :destaque LIMIT 3";
         
         $select = $conn->prepare($sql);
         $select->bindValue(':destaque', 'Destaque');
@@ -97,7 +97,8 @@ class Notice{
     {
         require 'src/db/connect.php';
 
-        $sql = "SELECT * FROM notices";
+        $sql = "SELECT * FROM notices ORDER BY id DESC";
+
         $select = $conn->prepare($sql);
         
             if ($select->execute()) {

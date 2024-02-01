@@ -48,9 +48,15 @@ include 'includes/head.php'
                     <div class="details__card">
                         <img src="Admin/public/img/notices/<?php echo $details[0]['notice_image']?>" alt="">
 
-                        <div class="card-date">
-                            Publicado em: <?php echo $date[0]?>
+                        <div class="row pt-2 pb-4">
+                            <div class="col-md-6 card-date">
+                                Publicado em: <?php echo $date[0];?>
+                            </div>
+                            <div class="col-md-6 card-date text-end">
+                                Por: <?php echo $details[0]['notice_author']?>
+                            </div>
                         </div>
+
                         <div class="notice-content">
                             <?php echo $details[0]['notice_content']?>
                         </div>
@@ -84,8 +90,9 @@ include 'includes/head.php'
                         <a href="<?php echo SITE_URL.'detalhes.php?id='.$last['id']?>" class="notice__link">
                             <div class="row g-0">
                                 <div class="col-md-4 d-flex align-items-center">
-                                    <div class="last_notice_image" style="background-image: url(<?php echo SITE_URL.'Admin/public/img/notices/'.$last['notice_image']?>);">
-                                       
+                                    <div class="last_notice_image"
+                                        style="background-image: url(<?php echo SITE_URL.'Admin/public/img/notices/'.$last['notice_image']?>);">
+
                                     </div>
                                 </div>
                                 <div class="col-md-8 d-flex align-items-center">

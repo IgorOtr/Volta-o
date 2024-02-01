@@ -6,7 +6,7 @@
             <h1 class="vr__text">VOLTA REDONDA</h1>
         </div>
         <div class="col-md-2 text-center">
-            <img src="assets/img/logo.png" width="80" class="logo" alt="" />
+            <a href="<?php echo SITE_URL?>"><img src="assets/img/logo.png" width="80" class="logo" alt="" /></a>
         </div>
         <div class="col-md-5 d-flex align-items-center vr__text__align">
             <h1>FUTEBOL CLUBE</h1>

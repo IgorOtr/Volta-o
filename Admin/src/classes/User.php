@@ -24,8 +24,8 @@ class User {
               unset($_SESSION['error-login']);
         }
             
-        $_SESSION["nome"] = $auth_result["user_name"];
-        $_SESSION["email"] = $auth_result["user_email"];
+        $_SESSION["voltaco_nome"] = $auth_result["user_name"];
+        $_SESSION["voltaco_email"] = $auth_result["user_email"];
 
         return header('location: '.SITE_URL.'Admin');
 

@@ -1,12 +1,12 @@
 <?php
 
-if (!$_SESSION['email']) {
+if (!$_SESSION['voltaco_email']) {
 
     session_destroy();
 
-    unset($_SESSION['nome']);
+    unset($_SESSION['voltaco_nome']);
 
-    unset($_SESSION['email']);
+    unset($_SESSION['voltaco_email']);
 
     session_unset();
 

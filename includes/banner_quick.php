@@ -4,16 +4,22 @@
             <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img class="rounded banner__quick" style="filter: brightness(1);"
-                            src="assets/img/banner-450.png" width="1200">
+                        <a target="_blank" href="https://api.whatsapp.com/send?phone=552433442250&text=Ol%C3%A1!%20Vi%20o%20plano%20QUICK%20Ver%C3%A3o%20450%20Mega%20*no%20site*%20e%20quero%20contratar!">
+                            <img class="rounded banner__quick" style="filter: brightness(1);"
+                                src="assets/img/banner-450.png" width="1200">
+                        </a>
                     </div>
                     <div class="carousel-item">
-                        <img class="rounded banner__quick" style="filter: brightness(1);"
-                            src="assets/img/banner-650.png" width="1200">
+                        <a target="_blank" href="https://api.whatsapp.com/send?phone=552433442250&text=Ol%C3%A1!%20Vi%20o%20plano%20QUICK%20Ver%C3%A3o%20650%20Mega%20*no%20site*%20e%20quero%20contratar!">
+                            <img class="rounded banner__quick" style="filter: brightness(1);"
+                                src="assets/img/banner-650.png" width="1200">
+                        </a>
                     </div>
                     <div class="carousel-item">
-                        <img class="rounded banner__quick" style="filter: brightness(1);"
-                            src="assets/img/banner-950.png" width="1200">
+                        <a target="_blank" href="https://api.whatsapp.com/send?phone=552433442250&text=Ol%C3%A1!%20Vi%20o%20plano%20QUICK%20Ver%C3%A3o%20950%20Mega%20*no%20site*%20e%20quero%20contratar!">
+                            <img class="rounded banner__quick" style="filter: brightness(1);"
+                                src="assets/img/banner-950.png" width="1200">
+                        </a>
                     </div>
                 </div>
             </div>

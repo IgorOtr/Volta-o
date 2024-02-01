@@ -256,7 +256,8 @@ footer ul li a:hover {
 }
 
 .notices__sec__2 .card-date {
-    padding: 10px 0px 10px 0px;
+    padding-top: 4px;
+    padding-bottom: 4px;
     color: #000000;
     font-size: 12px;
     font-weight: 500;
@@ -571,7 +572,7 @@ footer ul li a:hover {
 }
 
 .banner_slide {
-    padding: 242px; 
+    padding: 254px; 
     height: 100%; 
     width: 100%; 
     background-size: cover; 
